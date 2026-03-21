@@ -1,26 +1,26 @@
 class ShellyCli < Formula
   desc "Fast CLI for discovering, monitoring, and controlling Shelly devices"
   homepage "https://github.com/rvben/shelly-cli"
-  version "0.1.7"
+  version "0.1.8"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/rvben/shelly-cli/releases/download/v#{version}/shelly-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "3b6be50306cbba1acf6c558c07a011af315f3ce2f077c6346d2b6e89c408efa2"
+      sha256 "22ac523668b896c88c9abca73a467b385de15fbb8efe48c5a8c4959039720e67"
     else
       url "https://github.com/rvben/shelly-cli/releases/download/v#{version}/shelly-v#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "bc8ed29a8f47cbf6695aaf1bfe12456298a9658f1c42216e4d9cad221305501d"
+      sha256 "162f4bbf60ebbef9cb3042ff4353acbd0186519cd7ee2ce118eece0eea15bb7a"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/rvben/shelly-cli/releases/download/v#{version}/shelly-v#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "edb88c1b0ac8ae5738c3a78be87a4e0da70c1fc9a27b41ef2e88923cde28555c"
+      sha256 "4c8fc961da4c7ef55fa9c2154ffcd895e96538bbb44c8e0a597495746e83512d"
     else
       url "https://github.com/rvben/shelly-cli/releases/download/v#{version}/shelly-v#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "06b8e715b8cc29cf664466da8e93a4c156733b70a9ffb28fc3346000376cda5a"
+      sha256 "7e562f03395c5182d0b8f84460527cb0040cf5341b66606b4bb274fa80925302"
     end
   end
 
