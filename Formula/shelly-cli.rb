@@ -7,20 +7,20 @@ class ShellyCli < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/rvben/shelly-cli/releases/download/v#{version}/shelly-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "26807ddeb7836f7b57915bf92590c869f62eed56c3d01d3bb94843aca925c2c7"
+      sha256 "3b6be50306cbba1acf6c558c07a011af315f3ce2f077c6346d2b6e89c408efa2"
     else
       url "https://github.com/rvben/shelly-cli/releases/download/v#{version}/shelly-v#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "5ac4bca76a4ddc162ee0bf8cde1cf16436a80d79ae391121a2142add80cf5968"
+      sha256 "bc8ed29a8f47cbf6695aaf1bfe12456298a9658f1c42216e4d9cad221305501d"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/rvben/shelly-cli/releases/download/v#{version}/shelly-v#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "766b1d7488663993e4313bd884e597251d406176ab161ca9148d0e6718af9f9d"
+      sha256 "edb88c1b0ac8ae5738c3a78be87a4e0da70c1fc9a27b41ef2e88923cde28555c"
     else
       url "https://github.com/rvben/shelly-cli/releases/download/v#{version}/shelly-v#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "40cd61348167acc44a479a7e92de066d75a0d98ed751142405f5d40ba52d7cbd"
+      sha256 "06b8e715b8cc29cf664466da8e93a4c156733b70a9ffb28fc3346000376cda5a"
     end
   end
 
