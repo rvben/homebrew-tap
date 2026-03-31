@@ -25,3 +25,11 @@ A CLI for controlling Shelly smart home devices.
 ```bash
 brew install rvben/tap/shelly-cli
 ```
+
+### confluence-cli
+
+A Markdown-sync-first Confluence CLI for Cloud and Data Center.
+
+```bash
+brew install rvben/tap/confluence-cli
+```
