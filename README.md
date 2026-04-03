@@ -30,7 +30,7 @@ brew install <tool>
 
 ## Design Philosophy
 
-Every tool in this tap follows the [agent-first-cli](https://github.com/rvben/agent-first-cli) specification.
+Every tool in this tap follows [The CLI Spec](https://github.com/rvben/clispec).
 All tools support `--json` for structured output and a `schema` command for AI agent introspection.
 Consistent exit codes, shell completions, and interactive setup (`config init`) are standard across the suite.
 
