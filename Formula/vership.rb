@@ -1,26 +1,26 @@
 class Vership < Formula
   desc "Multi-target release orchestrator"
   homepage "https://github.com/rvben/vership"
-  version "0.4.1"
+  version "0.4.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/vership/releases/download/v0.4.1/vership-v0.4.1-aarch64-apple-darwin.tar.gz"
-      sha256 "17a979dfc44e4ba91e9907020bf96a36142090525888eabcb5fc516022b650c3"
+      url "https://github.com/rvben/vership/releases/download/v0.4.2/vership-v0.4.2-aarch64-apple-darwin.tar.gz"
+      sha256 "c508fb211a9433110bc5960c403c9ac1ccde98bae242a13556d487a771a734b9"
     else
-      url "https://github.com/rvben/vership/releases/download/v0.4.1/vership-v0.4.1-x86_64-apple-darwin.tar.gz"
-      sha256 "5068524214bbd3c929cf2d9d27d273d8de29b166f192eddd296710f744c992ae"
+      url "https://github.com/rvben/vership/releases/download/v0.4.2/vership-v0.4.2-x86_64-apple-darwin.tar.gz"
+      sha256 "ab220f294ec7616a680edeb49520e1b13ab1caf9dc5055259e95fbc606b5a088"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/vership/releases/download/v0.4.1/vership-v0.4.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "910490b13760aa4b3cf280c298c1d97952f0660aa9fdf44ad390d87fc1b511ea"
+      url "https://github.com/rvben/vership/releases/download/v0.4.2/vership-v0.4.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "6d0b3c77dcd2237c60c44ac2c4f725319bf36af6383eff0b6b5f39fc8799819b"
     else
-      url "https://github.com/rvben/vership/releases/download/v0.4.1/vership-v0.4.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "8ffb721559916429ebdc0feac349250ee4d62b86d3af4ea3331f2d8f978c135e"
+      url "https://github.com/rvben/vership/releases/download/v0.4.2/vership-v0.4.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "187ad46eed8bb25cbeae42bb6ff0f3fb131eb7a889085a8cb30763532ee99188"
     end
   end
 
