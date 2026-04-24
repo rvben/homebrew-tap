@@ -1,26 +1,26 @@
 class HomeassistantCli < Formula
   desc "CLI for Home Assistant"
   homepage "https://github.com/rvben/homeassistant-cli"
-  version "0.1.14"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.1.14/homeassistant-cli-v0.1.14-aarch64-apple-darwin.tar.gz"
-      sha256 "d77beacd96ee542f59c402abd2b9e0396894660fede99e424872c01af3497774"
+      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.2.0/homeassistant-cli-v0.2.0-aarch64-apple-darwin.tar.gz"
+      sha256 "d63e2b9ebb7282376d375f822b2a89ac4df5b7f7214b8e06ecddf82e0805d1e6"
     else
-      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.1.14/homeassistant-cli-v0.1.14-x86_64-apple-darwin.tar.gz"
-      sha256 "fcba10fb0f0e93591afd86719609ca86d660b8b16bb7259cfb7c3936e069dc28"
+      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.2.0/homeassistant-cli-v0.2.0-x86_64-apple-darwin.tar.gz"
+      sha256 "cdffe72358a03bb2e0b72af371651a738e5237f4acff7657d49e90a160b85e7a"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.1.14/homeassistant-cli-v0.1.14-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "c70cefa1fae793ab5c9f0c2ada6e9e52d6e7ca222d1f93835985b544896c171b"
+      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.2.0/homeassistant-cli-v0.2.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "dcbf8dba5ecbdfccca35c37a20ef9661ff70fd0e1399c464f60943553e96c855"
     else
-      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.1.14/homeassistant-cli-v0.1.14-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "9effcdd928f7ecb1aa6df1bf61c9621b3c2cffd80410bfcceac448ebbe4bc18c"
+      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.2.0/homeassistant-cli-v0.2.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "2849d16dcc7f083a9b55b6dca2c57cb96e00f6b2d4697b2df649f63ca9c58beb"
     end
   end
 
