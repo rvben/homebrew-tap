@@ -1,26 +1,26 @@
 class Openarchieven < Formula
   desc "Command-line interface to the openarchieven.nl Dutch genealogical API"
   homepage "https://github.com/rvben/openarchieven-cli"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.2.0/openarchieven-0.2.0-aarch64-apple-darwin.tar.gz"
-      sha256 "df245053c3cf86d04ca672b94e8387007ed7d631e38ed7608462e83512112b31"
+      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.2.1/openarchieven-0.2.1-aarch64-apple-darwin.tar.gz"
+      sha256 "0d140320de244a27697d76a4865318b0144496d9bf33dbc6358555bf31cf9509"
     else
-      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.2.0/openarchieven-0.2.0-x86_64-apple-darwin.tar.gz"
-      sha256 "e6cd2fd7f1a18f5eb06fcacaf798da356e02d81396a6cde4a483bcc40016a5b7"
+      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.2.1/openarchieven-0.2.1-x86_64-apple-darwin.tar.gz"
+      sha256 "2ed863eeccd0356438e4de53981626b88df410862a8486ddb248d5c3e287e778"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.2.0/openarchieven-0.2.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "d10ee57846fe7a6ea07d3fe6cad5658ece05f639894696ccb3efb67b214f2b6a"
+      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.2.1/openarchieven-0.2.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "72dfd69d71b891c033c389d4d46f9b909ecd8079dc090d2cea3cfd54f3dc0dea"
     else
-      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.2.0/openarchieven-0.2.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "fbc331b0a4bb800c8fc1d1e901f9c61f82b9d3b18781cf6533a2520b4532751b"
+      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.2.1/openarchieven-0.2.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "11ab4d025b58e99e20a39934a6ebc6ffbe5dec939b564e958190694eb8a0dab3"
     end
   end
 
