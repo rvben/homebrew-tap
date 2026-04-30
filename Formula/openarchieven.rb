@@ -1,26 +1,26 @@
 class Openarchieven < Formula
   desc "Command-line interface to the openarchieven.nl Dutch genealogical API"
   homepage "https://github.com/rvben/openarchieven-cli"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.1.0/openarchieven-0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "c030b140a1a10d4b21b843acf582d94ca7de18f97f9566641b5cf0af1dcd72cb"
+      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.2.0/openarchieven-0.2.0-aarch64-apple-darwin.tar.gz"
+      sha256 "df245053c3cf86d04ca672b94e8387007ed7d631e38ed7608462e83512112b31"
     else
-      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.1.0/openarchieven-0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "884667e9ccc54dee8276f7f6c3579829f023a969ee98daa90ac05e62c502f99b"
+      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.2.0/openarchieven-0.2.0-x86_64-apple-darwin.tar.gz"
+      sha256 "e6cd2fd7f1a18f5eb06fcacaf798da356e02d81396a6cde4a483bcc40016a5b7"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.1.0/openarchieven-0.1.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a59c4215ac0670f2656a94b696b4d9730729f795063ca27ae5c0968ad74b43ee"
+      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.2.0/openarchieven-0.2.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "d10ee57846fe7a6ea07d3fe6cad5658ece05f639894696ccb3efb67b214f2b6a"
     else
-      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.1.0/openarchieven-0.1.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "8282d6e5c1fd05fa0fd61b1435de1c7560cfd5080c6af0d8a7c556db0691b3c7"
+      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.2.0/openarchieven-0.2.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "fbc331b0a4bb800c8fc1d1e901f9c61f82b9d3b18781cf6533a2520b4532751b"
     end
   end
 
