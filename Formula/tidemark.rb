@@ -1,26 +1,26 @@
 class Tidemark < Formula
   desc "Snapshot a directory tree and diff what changed - no git required"
   homepage "https://github.com/rvben/tidemark"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/tidemark/releases/download/v0.1.1/tidemark-v0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "d54aeb8181c19b76fc2a8bb0c8c0649c2f011345d6121030ab3e1211fe3b0c92"
+      url "https://github.com/rvben/tidemark/releases/download/v0.1.2/tidemark-v0.1.2-aarch64-apple-darwin.tar.gz"
+      sha256 "dd6ffc7ec59620012e5238a8cf210032aa6147c0bd7a6b3089e8620d260602f3"
     else
-      url "https://github.com/rvben/tidemark/releases/download/v0.1.1/tidemark-v0.1.1-x86_64-apple-darwin.tar.gz"
-      sha256 "46435615ee470538a05655a953bfce34654e3bd093f68bb592ea584dfc926794"
+      url "https://github.com/rvben/tidemark/releases/download/v0.1.2/tidemark-v0.1.2-x86_64-apple-darwin.tar.gz"
+      sha256 "504af8aa1c2d29e7925d1c3e449e7eaa7f0636e4cf06eb9c9e29dbeb27fec346"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/tidemark/releases/download/v0.1.1/tidemark-v0.1.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "c7b8f22e1583256bc6f57c98724ff1988bf6737e2069c65314f0825b06579fc4"
+      url "https://github.com/rvben/tidemark/releases/download/v0.1.2/tidemark-v0.1.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "a8a851f009da7030e0a16e1ffa704f31ab5fc419aa92fa29c6188e3d816e1e5c"
     else
-      url "https://github.com/rvben/tidemark/releases/download/v0.1.1/tidemark-v0.1.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "29327740b06998e476c73fa6e10962a8e445fb9792218ff583a2acf33e81afd8"
+      url "https://github.com/rvben/tidemark/releases/download/v0.1.2/tidemark-v0.1.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "91e3d08bb29b0d48426698e23a6c8777a82a0f2902e97cae10c69e0b07041f63"
     end
   end
 
