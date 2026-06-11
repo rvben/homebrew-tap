@@ -1,26 +1,26 @@
 class Openarchieven < Formula
   desc "Command-line interface to the openarchieven.nl Dutch genealogical API"
   homepage "https://github.com/rvben/openarchieven-cli"
-  version "0.4.0"
+  version "0.4.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.4.0/openarchieven-0.4.0-aarch64-apple-darwin.tar.gz"
-      sha256 "e1595fc223767ff9612615ff8a5b3bde49a9e7d25be20ef77914b1125ec995ca"
+      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.4.1/openarchieven-0.4.1-aarch64-apple-darwin.tar.gz"
+      sha256 "1fe5558adc779de9855d55c8271d274249f8f0da35bc472fae8840c5e0802f2f"
     else
-      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.4.0/openarchieven-0.4.0-x86_64-apple-darwin.tar.gz"
-      sha256 "ec2bd3809fd03e1e92a0d0afe62cfcecc000c166263bdec5d71c75c7212a0f65"
+      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.4.1/openarchieven-0.4.1-x86_64-apple-darwin.tar.gz"
+      sha256 "533c0350bc6e98dfc8cc17295dab407cbd565cf7c21ccc194ec22ad9dc0a218b"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.4.0/openarchieven-0.4.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "c5c11c112e50fe99f1aadcf28810f6a64e6909c3bd08a603986c1f3fa20aa6bc"
+      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.4.1/openarchieven-0.4.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "0a665d90d5302578fa0fa34c3bd66183f37528313345d5b7e6d6d48134f3bfa8"
     else
-      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.4.0/openarchieven-0.4.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "1ceadfbd946c2e19ac01033fb84a731f0b588cf22f69259668bffc361682bcdb"
+      url "https://github.com/rvben/openarchieven-cli/releases/download/v0.4.1/openarchieven-0.4.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "1780ec9c883fe16eb94f1610367d39e21e5f8e93037dc58387721ed2f4bfa9bb"
     end
   end
 
