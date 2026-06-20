@@ -1,26 +1,26 @@
 class HomeassistantCli < Formula
   desc "CLI for Home Assistant"
   homepage "https://github.com/rvben/homeassistant-cli"
-  version "0.2.1"
+  version "0.2.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.2.1/homeassistant-cli-v0.2.1-aarch64-apple-darwin.tar.gz"
-      sha256 "fab0b9953ba3ef119e4e1e8754de5c4ad99bd438b54f43e0773c598382ec5124"
+      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.2.2/homeassistant-cli-v0.2.2-aarch64-apple-darwin.tar.gz"
+      sha256 "d1e005f6cc820b17c6287498b53979fb489dc43c7242eb36f0e2df8808c03952"
     else
-      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.2.1/homeassistant-cli-v0.2.1-x86_64-apple-darwin.tar.gz"
-      sha256 "24cb0eb967a1101ecfec239ff9bdaccd89c03c4aba30a5a3e8555940faa66bca"
+      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.2.2/homeassistant-cli-v0.2.2-x86_64-apple-darwin.tar.gz"
+      sha256 "e3bce8363c73eea625e440318eb3b984b367981ca65df55eda026051db7f1280"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.2.1/homeassistant-cli-v0.2.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "f5fb4af92a7aa1968111c3c06944612e0007a59a468e4a83128ce43c03d57ca3"
+      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.2.2/homeassistant-cli-v0.2.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "81c09a5eeb81137d0f0c66713116264b1841353cd5a766c1695cc73ce059a266"
     else
-      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.2.1/homeassistant-cli-v0.2.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "1f50d89088381f3e2a2b18868e95372febc55b6d4ecec05bfe07ef2945dde3c1"
+      url "https://github.com/rvben/homeassistant-cli/releases/download/v0.2.2/homeassistant-cli-v0.2.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "96ee286552679bc24bbaa6b040fba163bbb1e1c6522fc2710799c90412fcc025"
     end
   end
 
