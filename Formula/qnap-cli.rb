@@ -1,26 +1,26 @@
 class QnapCli < Formula
   desc "CLI for QNAP NAS management"
   homepage "https://github.com/rvben/qnap-cli"
-  version "0.1.11"
+  version "0.1.12"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/qnap-cli/releases/download/v0.1.11/qnap-v0.1.11-aarch64-apple-darwin.tar.gz"
-      sha256 "d353b3623631c2383cd3794050968fb5a775bd449045710dbc96dd229b06959d"
+      url "https://github.com/rvben/qnap-cli/releases/download/v0.1.12/qnap-v0.1.12-aarch64-apple-darwin.tar.gz"
+      sha256 "b7323080091658ca4ca7a00173f220ef239764a109cdc988dd1b8d3ce90ff678"
     else
-      url "https://github.com/rvben/qnap-cli/releases/download/v0.1.11/qnap-v0.1.11-x86_64-apple-darwin.tar.gz"
-      sha256 "4e515b48d304bec9c4f4759bb24f1d5a1ae77ae58bf48b03529766ff63f08341"
+      url "https://github.com/rvben/qnap-cli/releases/download/v0.1.12/qnap-v0.1.12-x86_64-apple-darwin.tar.gz"
+      sha256 "08ea01dbc0a4a838500476ace963d3aad2d5c8e74de61b5b7a88ae72ed166d35"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/qnap-cli/releases/download/v0.1.11/qnap-v0.1.11-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "ca3b69b5a7ce6f5de2821d307a0128ac53084437098455533ab16dbe515cb759"
+      url "https://github.com/rvben/qnap-cli/releases/download/v0.1.12/qnap-v0.1.12-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "05ffd711b866752713ce0d7c5ba60f2b7e4b2aa97a03f23395a6758b4b50985d"
     else
-      url "https://github.com/rvben/qnap-cli/releases/download/v0.1.11/qnap-v0.1.11-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "990e6591c58ad41f805e4eb7e7152c032d4d846b7af1ce4685509a760cf36316"
+      url "https://github.com/rvben/qnap-cli/releases/download/v0.1.12/qnap-v0.1.12-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "8eb273a112039acfabda5a395be82dfc742b5350c90529dfc710a2853a17f1ba"
     end
   end
 
