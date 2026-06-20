@@ -1,26 +1,26 @@
 class Pakket < Formula
   desc "Track shipments from the command line"
   homepage "https://github.com/rvben/pakket"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/pakket/releases/download/v0.1.0/pakket-v0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "46b4eb80b84858f415f286026a645707df2b16f8f413cfaef756bb08b61ca0bc"
+      url "https://github.com/rvben/pakket/releases/download/v0.1.1/pakket-v0.1.1-aarch64-apple-darwin.tar.gz"
+      sha256 "69e190a82b96bb0ee3ab5833a9ff42ad4787c0975275ba2aea9ad62aca42845a"
     else
-      url "https://github.com/rvben/pakket/releases/download/v0.1.0/pakket-v0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "bc3742d25f3716d145cd01438e3012a6520c1e20932c65887e7f7dc26485189b"
+      url "https://github.com/rvben/pakket/releases/download/v0.1.1/pakket-v0.1.1-x86_64-apple-darwin.tar.gz"
+      sha256 "673a449b8deb7faf09235694a9a6fa279733d95dc3cc1423df1c26520c8651f7"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/pakket/releases/download/v0.1.0/pakket-v0.1.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "8760b78eeaa214e5dad9c7d3e24287f86931bbec7672ced00cea1f92a79f24a4"
+      url "https://github.com/rvben/pakket/releases/download/v0.1.1/pakket-v0.1.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "3ead5665df3804dfc88364e2d812cf449b80461f4bb0b14c36ce868bf9b7426b"
     else
-      url "https://github.com/rvben/pakket/releases/download/v0.1.0/pakket-v0.1.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "8248d4cade2f9e3303629eef09ad1c5e91094b9f53cc58c14f3bc6b5cb0f0825"
+      url "https://github.com/rvben/pakket/releases/download/v0.1.1/pakket-v0.1.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "2146efcadef1a2b636bb2c3c843117a7bd7d4c672569db87521ca485a3303598"
     end
   end
 
