@@ -1,26 +1,26 @@
 class Clihatch < Formula
   desc "Scaffold a clispec-compliant, agent-facing Rust CLI in seconds"
   homepage "https://github.com/rvben/clihatch"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/clihatch/releases/download/v0.1.1/clihatch-v0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "127bc8304b9b934809cc3f0d7e9a698a25a1488c5f374258ba5856d47938eb4c"
+      url "https://github.com/rvben/clihatch/releases/download/v0.1.2/clihatch-v0.1.2-aarch64-apple-darwin.tar.gz"
+      sha256 "9609fba55dd3545de48a5aff489dc0e2746ce2aace29366b9886749dcb28a2ad"
     else
-      url "https://github.com/rvben/clihatch/releases/download/v0.1.1/clihatch-v0.1.1-x86_64-apple-darwin.tar.gz"
-      sha256 "2cfbdff7edb6668851945ae5b29ea3e5090f13e9562a35be6731d9075c56eb52"
+      url "https://github.com/rvben/clihatch/releases/download/v0.1.2/clihatch-v0.1.2-x86_64-apple-darwin.tar.gz"
+      sha256 "57758db69cff90f2151fd79581a900f9b170d957152eda2c85c55ddf50fb7826"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/clihatch/releases/download/v0.1.1/clihatch-v0.1.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "2a57b1b94b8acd5a8f6b0524aff91e2969453eff2afe11439a9ca45312687b58"
+      url "https://github.com/rvben/clihatch/releases/download/v0.1.2/clihatch-v0.1.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "29dbf2f021502c062a87ddc88bd30fd3afc3bbb8b23239b7c1ad843c610d089b"
     else
-      url "https://github.com/rvben/clihatch/releases/download/v0.1.1/clihatch-v0.1.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "1c903200bb2ba86e23ada5fdf407109a4260acf7e5dc61bec8f3febb4e849b17"
+      url "https://github.com/rvben/clihatch/releases/download/v0.1.2/clihatch-v0.1.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "cfb2458fd06c6dec3a1bd011794e3ada7a8e98413a8f0197467e4bc03cc709c4"
     end
   end
 
