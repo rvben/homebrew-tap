@@ -7,20 +7,20 @@ class Dotdiff < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/rvben/dotdiff/releases/download/v0.1.0/dotdiff-v0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "c99c53293c77501e4a3bc51acf8d063301aebe58c2685fa088f512ecbe75bfa3"
+      sha256 "dcc60efbae9a67e28f3afe9dcf86eb316d199e7a9c300616dea3c7ec2bd3187d"
     else
       url "https://github.com/rvben/dotdiff/releases/download/v0.1.0/dotdiff-v0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "87a881cfada8ce66136c43474672aa8b317673c597ff9bc6fc379688c6873d4a"
+      sha256 "3c5fb2355f3ba9c5de18377770aa51ef2d31e1baaa063cec74882fe4fef15d9c"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/rvben/dotdiff/releases/download/v0.1.0/dotdiff-v0.1.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "f6219465877b54a285a99bda411397cb702c9cc6bf7b7c956f4e7b276abd5b60"
+      sha256 "83dc2cd23d72bf26c92345ae4914f8d570ead6faa78bc8f6f28cb9e6e98b6d11"
     else
       url "https://github.com/rvben/dotdiff/releases/download/v0.1.0/dotdiff-v0.1.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "57246a0782ad9ed82a751f2db2f2b5b849e3ef6d42d95bdef0575420ed1dbfeb"
+      sha256 "ef0b7377f142d732a18b35b2fb8e6d19a55ccfd3ad4d0de21f680daae140bc98"
     end
   end
 
