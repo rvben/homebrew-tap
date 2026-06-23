@@ -1,26 +1,26 @@
 class Tarry < Formula
   desc "Block until a condition holds, then print one compact verdict"
   homepage "https://github.com/rvben/tarry"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/tarry/releases/download/v0.1.1/tarry-v0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "891b1529418ab7510b231daea140c02b0fda9382d5491827cc4c8be5e6dd6ad2"
+      url "https://github.com/rvben/tarry/releases/download/v0.1.2/tarry-v0.1.2-aarch64-apple-darwin.tar.gz"
+      sha256 "e89f21520472aaa6328098145b9a11321fd85ce1fcacac77b5b9fdcaacac1598"
     else
-      url "https://github.com/rvben/tarry/releases/download/v0.1.1/tarry-v0.1.1-x86_64-apple-darwin.tar.gz"
-      sha256 "ad3e2d1ce5fac16201664a704053d0f6cdbc93b745ce9b35f6ebff010ccdacde"
+      url "https://github.com/rvben/tarry/releases/download/v0.1.2/tarry-v0.1.2-x86_64-apple-darwin.tar.gz"
+      sha256 "63134d62bfb17a3d87e70520ebffbcf719c1175388d98fed291c3b62834723a0"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/tarry/releases/download/v0.1.1/tarry-v0.1.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "d5ac6cb718f29ff04884c80f9ad9ac5df7e4b244337a0452c64903a52f85f062"
+      url "https://github.com/rvben/tarry/releases/download/v0.1.2/tarry-v0.1.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "883a6e53f39fac92e963c74995ea4604bec078942284c72a6fa262b253892703"
     else
-      url "https://github.com/rvben/tarry/releases/download/v0.1.1/tarry-v0.1.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "3aa6586d58cfd0b33267cfe3999c4884e2041f378e6133ea777158c4a9f5af2d"
+      url "https://github.com/rvben/tarry/releases/download/v0.1.2/tarry-v0.1.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "77b4f70f45b321c2e0ff004b1070017277d5c2e91af39c69e054a5562983e4eb"
     end
   end
 
