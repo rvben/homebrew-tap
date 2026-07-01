@@ -1,26 +1,26 @@
 class N8nc < Formula
   desc "CLI for n8n workflow automation"
   homepage "https://github.com/rvben/n8nc"
-  version "0.4.6"
+  version "0.4.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/n8nc/releases/download/v0.4.6/n8nc-v0.4.6-aarch64-apple-darwin.tar.gz"
-      sha256 "b8911d24cbf427e9c3a19242c6490c313156a5f6a5a496157b887c564760260d"
+      url "https://github.com/rvben/n8nc/releases/download/v0.4.7/n8nc-v0.4.7-aarch64-apple-darwin.tar.gz"
+      sha256 "99daec409fa8cdb57b5c172dea2bdaba726d00295e9b16774bae853e8788904e"
     else
-      url "https://github.com/rvben/n8nc/releases/download/v0.4.6/n8nc-v0.4.6-x86_64-apple-darwin.tar.gz"
-      sha256 "5b2cdb426e7d862194c000250713656a944c7a28e0d5b6f26d4aeb4ed8a8f011"
+      url "https://github.com/rvben/n8nc/releases/download/v0.4.7/n8nc-v0.4.7-x86_64-apple-darwin.tar.gz"
+      sha256 "0390a367d857b635ae10a41719ed19fdbb0ebf981b04b1a084892b043ab3af00"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/n8nc/releases/download/v0.4.6/n8nc-v0.4.6-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "c815f69c61c608e30d050a9f0523ba85300df7354e00d646e786a8491f30eb0e"
+      url "https://github.com/rvben/n8nc/releases/download/v0.4.7/n8nc-v0.4.7-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "ab70ea2ba977225e8d60684ccecbffded9c74529b353f3ea93ee5a099274b7ba"
     else
-      url "https://github.com/rvben/n8nc/releases/download/v0.4.6/n8nc-v0.4.6-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "c6f0655be82b144b72ca4c49c2a4c6bf4b295fc9710e7146e53bfa9372f02699"
+      url "https://github.com/rvben/n8nc/releases/download/v0.4.7/n8nc-v0.4.7-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "927b198c6af7e27a0353f715a23199527a4dfe9b1f70951d3364d8e66ba5624b"
     end
   end
 
