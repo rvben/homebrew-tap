@@ -1,5 +1,5 @@
 class Esprite < Formula
-  desc "Host-native ESP32/Arduino firmware simulator with an agent-facing CLI"
+  desc "ESP32/Arduino firmware simulator with an agent-facing CLI (host-native + QEMU backends)"
   homepage "https://github.com/rvben/esprite"
   version "0.3.0"
   license "MIT"
