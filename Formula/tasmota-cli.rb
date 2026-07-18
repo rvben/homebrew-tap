@@ -1,4 +1,4 @@
-class Tasmota < Formula
+class TasmotaCli < Formula
   desc "Unofficial CLI for managing Tasmota smart devices over HTTP"
   homepage "https://github.com/rvben/tasmota-cli"
   version "0.1.0"
