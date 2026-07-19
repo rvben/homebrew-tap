@@ -1,26 +1,26 @@
 class TasmotaCli < Formula
   desc "Unofficial CLI for managing Tasmota smart devices over HTTP"
   homepage "https://github.com/rvben/tasmota-cli"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/tasmota-cli/releases/download/v0.1.1/tasmota-v0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "c554070373e5cba7f5ce4d60bd5d54135cb180e0a413d576ab05062b56b97018"
+      url "https://github.com/rvben/tasmota-cli/releases/download/v0.1.2/tasmota-v0.1.2-aarch64-apple-darwin.tar.gz"
+      sha256 "111cc2ecb6f0aeb39ed2d9cf7da393c59d0c2e509c074af666178f3f86aba383"
     else
-      url "https://github.com/rvben/tasmota-cli/releases/download/v0.1.1/tasmota-v0.1.1-x86_64-apple-darwin.tar.gz"
-      sha256 "c061da2f93ee79f3f1d389c3d9cc98d0b668cc2d819efd28d1f1a00d0c3abd8e"
+      url "https://github.com/rvben/tasmota-cli/releases/download/v0.1.2/tasmota-v0.1.2-x86_64-apple-darwin.tar.gz"
+      sha256 "d502fc6e24bdd2e7242f8c605056cb412fe311502af3f126267548142ef5c2da"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/tasmota-cli/releases/download/v0.1.1/tasmota-v0.1.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "33d57ea35af5dab5946a0b1a4da16acb22ae68561d914257088ba5f71c18a207"
+      url "https://github.com/rvben/tasmota-cli/releases/download/v0.1.2/tasmota-v0.1.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "32f1792375e5e16f53ae3a4f655438bc159519903f2880f557412dd3a3529cf4"
     else
-      url "https://github.com/rvben/tasmota-cli/releases/download/v0.1.1/tasmota-v0.1.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "f5597ebb11154258b531e6b15a1b73c8d49a240de0222192919ca80154bf3747"
+      url "https://github.com/rvben/tasmota-cli/releases/download/v0.1.2/tasmota-v0.1.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "6d70e54a682b1592eebb01c2e954579955b7fe8e5f0718751a5a46436265772e"
     end
   end
 
