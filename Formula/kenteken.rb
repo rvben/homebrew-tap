@@ -1,26 +1,26 @@
 class Kenteken < Formula
   desc "Look up Dutch vehicle data by licence plate from the RDW open data API"
   homepage "https://github.com/rvben/kenteken"
-  version "0.2.1"
+  version "0.2.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/kenteken/releases/download/v0.2.1/kenteken-v0.2.1-aarch64-apple-darwin.tar.gz"
-      sha256 "257589ee38286777911aa7a7bda47c29399a3566eb182a8d77f49c4298f6d38b"
+      url "https://github.com/rvben/kenteken/releases/download/v0.2.2/kenteken-v0.2.2-aarch64-apple-darwin.tar.gz"
+      sha256 "cce09cc862850ded9f34b83a9a7a292e7d615a91eb11633bf166912fce514dc9"
     else
-      url "https://github.com/rvben/kenteken/releases/download/v0.2.1/kenteken-v0.2.1-x86_64-apple-darwin.tar.gz"
-      sha256 "0211f00763e7e28bda51a1e4166fefdaed380f34c39bb16ae9a7ea8e26c5a083"
+      url "https://github.com/rvben/kenteken/releases/download/v0.2.2/kenteken-v0.2.2-x86_64-apple-darwin.tar.gz"
+      sha256 "716257a839478b71bf9ba5b85a88057fdc36c953e36431334573d2445e88e8d1"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/kenteken/releases/download/v0.2.1/kenteken-v0.2.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "507196da6699b377f0774d41ab781581df9dff5f2a137e86d8e9153d116fdd97"
+      url "https://github.com/rvben/kenteken/releases/download/v0.2.2/kenteken-v0.2.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "6f4d7cd4fa952e4862e0aee3238097fe0c6e6a55e379d27d34f01467cc445225"
     else
-      url "https://github.com/rvben/kenteken/releases/download/v0.2.1/kenteken-v0.2.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "a15b8ce9c24c0ec9842cde397c91bc625df7a36e9d58d2929205749574dd9785"
+      url "https://github.com/rvben/kenteken/releases/download/v0.2.2/kenteken-v0.2.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "63c5aa819523456f9c0bf34b6c61e7459cba9043a048886e818bc215ca42e03c"
     end
   end
 
