@@ -1,26 +1,26 @@
 class UnifiCli < Formula
   desc "CLI for UniFi Network controllers"
   homepage "https://github.com/rvben/unifi-cli"
-  version "0.3.3"
+  version "0.3.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/unifi-cli/releases/download/v0.3.3/unifi-cli-v0.3.3-aarch64-apple-darwin.tar.gz"
-      sha256 "9ccaee4bf62851731b3a6dd4b16432cff6abf4e6bc82646aacfe894eab0f7b1e"
+      url "https://github.com/rvben/unifi-cli/releases/download/v0.3.4/unifi-cli-v0.3.4-aarch64-apple-darwin.tar.gz"
+      sha256 "3e353778282b03a588564b9b1f3bf15b5088691d8ba7f9e54e3a4082f1ea8e2d"
     else
-      url "https://github.com/rvben/unifi-cli/releases/download/v0.3.3/unifi-cli-v0.3.3-x86_64-apple-darwin.tar.gz"
-      sha256 "e8c7cbbb6310dc7cd2c90cabfdbaef285154088059e3361f55c2777ae30ca7c4"
+      url "https://github.com/rvben/unifi-cli/releases/download/v0.3.4/unifi-cli-v0.3.4-x86_64-apple-darwin.tar.gz"
+      sha256 "c0d2c0caf455e963c2e2d0d68f2269a8a34e1b30c0b79ae8ebfb55568e7cd389"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/unifi-cli/releases/download/v0.3.3/unifi-cli-v0.3.3-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a6df3464317ef0b8455fbe43377a1a93f1804018cc5658fde413c96fab0709b9"
+      url "https://github.com/rvben/unifi-cli/releases/download/v0.3.4/unifi-cli-v0.3.4-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "be47f025f4c673e3bfec5dee7ab8bf86507b5f1178d3f7258568e979dd145281"
     else
-      url "https://github.com/rvben/unifi-cli/releases/download/v0.3.3/unifi-cli-v0.3.3-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "105ec304dc168695649c7c16a2ea1913187ae8b7c09a5b37c8893e58e327ba3c"
+      url "https://github.com/rvben/unifi-cli/releases/download/v0.3.4/unifi-cli-v0.3.4-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "4fbcdf1ca9e103cc7eef19f625f39a80b8de39bd2c0ecd00ede83d581e2a9cdd"
     end
   end
 
