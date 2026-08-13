@@ -1,26 +1,26 @@
 class YukiCli < Formula
   desc "CLI for Yuki bookkeeping"
   homepage "https://github.com/rvben/yuki-cli"
-  version "0.1.8"
+  version "0.1.10"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/yuki-cli/releases/download/v0.1.8/yuki-cli-v0.1.8-aarch64-apple-darwin.tar.gz"
-      sha256 "281bb57a79ac43f949a1f9621ae762144b9910731d106ac144d5b568c93eb291"
+      url "https://github.com/rvben/yuki-cli/releases/download/v0.1.10/yuki-cli-v0.1.10-aarch64-apple-darwin.tar.gz"
+      sha256 "f4907e604be9fa597ba33b155da817661e1c7f40bfe3da4fd5b487ea5c42b04e"
     else
-      url "https://github.com/rvben/yuki-cli/releases/download/v0.1.8/yuki-cli-v0.1.8-x86_64-apple-darwin.tar.gz"
-      sha256 "ab1da8de6d68ac5e90edb546e7b64da8991197713fe68f8f07a85777a1068e12"
+      url "https://github.com/rvben/yuki-cli/releases/download/v0.1.10/yuki-cli-v0.1.10-x86_64-apple-darwin.tar.gz"
+      sha256 "b328217923cd105ed329cd4f361fc313d5ec7b83eda10990edfbd3bb0757f069"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/yuki-cli/releases/download/v0.1.8/yuki-cli-v0.1.8-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "7c390260362e3b797de6e8df8bde3a7243705dc4e3fa61521a0dd32f8dfda295"
+      url "https://github.com/rvben/yuki-cli/releases/download/v0.1.10/yuki-cli-v0.1.10-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "721912b0e95cb577864c55cc07085d380a165052c54f48ea502656ef12cc8e09"
     else
-      url "https://github.com/rvben/yuki-cli/releases/download/v0.1.8/yuki-cli-v0.1.8-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "fe764f7d24f975a33710fa03e16da97d1570bb505c807fc8199b33c7dab11bd6"
+      url "https://github.com/rvben/yuki-cli/releases/download/v0.1.10/yuki-cli-v0.1.10-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "728c6ac4b80cb14ed16895849f1111f4b0ccf55a1b0c70038c23559706fd86b7"
     end
   end
 
