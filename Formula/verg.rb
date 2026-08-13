@@ -1,26 +1,26 @@
 class Verg < Formula
   desc "Stateless infrastructure convergence engine"
   homepage "https://github.com/rvben/verg"
-  version "0.8.2"
+  version "0.8.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/verg/releases/download/v0.8.2/verg-v0.8.2-aarch64-apple-darwin.tar.gz"
-      sha256 "2f4b7fab7c328ccc9ab15e60b978ae4581ce1200589795b9cec5245d1c3b7178"
+      url "https://github.com/rvben/verg/releases/download/v0.8.3/verg-v0.8.3-aarch64-apple-darwin.tar.gz"
+      sha256 "e17ef9cc1cfce5d012c521f7958d7a2a5038bc7a27e0ad38ef2b03a3977c4c4f"
     else
-      url "https://github.com/rvben/verg/releases/download/v0.8.2/verg-v0.8.2-x86_64-apple-darwin.tar.gz"
-      sha256 "6092cb0cb4ec10322882657942c77c5463536a9c1ec006c13cdf3e8703e7cbc8"
+      url "https://github.com/rvben/verg/releases/download/v0.8.3/verg-v0.8.3-x86_64-apple-darwin.tar.gz"
+      sha256 "c740b69315f8b37bbb56420fe691f9e6df3881868b0ec636924a8d9aa70eb943"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/verg/releases/download/v0.8.2/verg-v0.8.2-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "ff0649bfee81a55cf22baa6c00f06e89b207c6a4153143a9c74a0b2ab02c2753"
+      url "https://github.com/rvben/verg/releases/download/v0.8.3/verg-v0.8.3-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "2c067ba5ee7b37de3177b3792ead7b714d485ecc0fc37f90335a5bb6da6db9de"
     else
-      url "https://github.com/rvben/verg/releases/download/v0.8.2/verg-v0.8.2-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "295f9a53a9ce56830fa5bc3eb5fc06d1e28b2ec6faf40f932b5e98f04a3cc098"
+      url "https://github.com/rvben/verg/releases/download/v0.8.3/verg-v0.8.3-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "36877b5b204705a1d913985763c3acdeaec47af3cb96826af76732a4a1a845cf"
     end
   end
 
