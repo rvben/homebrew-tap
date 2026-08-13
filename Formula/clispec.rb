@@ -1,26 +1,26 @@
 class Clispec < Formula
   desc "Score CLI tools against The CLI Spec"
   homepage "https://github.com/rvben/clispec-cli"
-  version "0.2.10"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/clispec-cli/releases/download/v0.2.10/clispec-v0.2.10-aarch64-apple-darwin.tar.gz"
-      sha256 "721642c243e4d681861e7ff2f8653edc8ebdc15e5a63094e0e0f33ae45f69ab6"
+      url "https://github.com/rvben/clispec-cli/releases/download/v0.3.0/clispec-v0.3.0-aarch64-apple-darwin.tar.gz"
+      sha256 "bb20da77f5a6810e53a6c41fbb5e0ca29772dd8fc4bb23bb16a0519d94c394ff"
     else
-      url "https://github.com/rvben/clispec-cli/releases/download/v0.2.10/clispec-v0.2.10-x86_64-apple-darwin.tar.gz"
-      sha256 "c388d2c41f4b249ab342eb4c26410acd07f4ff706aac268154c956af47f6fa97"
+      url "https://github.com/rvben/clispec-cli/releases/download/v0.3.0/clispec-v0.3.0-x86_64-apple-darwin.tar.gz"
+      sha256 "9497d6f3f0b9da674957b357f292ff0f960b986c30f42ef84da4a30c682a494e"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/clispec-cli/releases/download/v0.2.10/clispec-v0.2.10-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "ad967a87baf46fd4acd40acf5756c7aaa185f1a4008f7e89d04048243c097761"
+      url "https://github.com/rvben/clispec-cli/releases/download/v0.3.0/clispec-v0.3.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "6d701555fb5b934417244e2de82d6e55bcb0a74f00ddeda41c17b7d3b9a9f93f"
     else
-      url "https://github.com/rvben/clispec-cli/releases/download/v0.2.10/clispec-v0.2.10-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "b3b4bc3f7fba9a20fdb3b1b074327bbbf19ca9892179d60f10d061c7e819700a"
+      url "https://github.com/rvben/clispec-cli/releases/download/v0.3.0/clispec-v0.3.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "0507415598c04a65dd6d8212d7774040e0f66dcd465589243b617351dc620d6b"
     end
   end
 
