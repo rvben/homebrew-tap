@@ -1,26 +1,26 @@
 class Recur < Formula
   desc "A human-friendly cron job manager"
   homepage "https://github.com/rvben/recur"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/recur/releases/download/v0.1.1/recur-v0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "e30ccaf2ce679264676f1ff6033978292738f9a0e8737fddee90cabd1f561617"
+      url "https://github.com/rvben/recur/releases/download/v0.1.2/recur-v0.1.2-aarch64-apple-darwin.tar.gz"
+      sha256 "026d70c02a73e31901f8fdb0daeec5e5c2ddff344b15fe20a6e598038b0bb722"
     else
-      url "https://github.com/rvben/recur/releases/download/v0.1.1/recur-v0.1.1-x86_64-apple-darwin.tar.gz"
-      sha256 "7e329e365c8b0aab409f2c8da592a2ef39f5b893ae291778f1838abf990a020a"
+      url "https://github.com/rvben/recur/releases/download/v0.1.2/recur-v0.1.2-x86_64-apple-darwin.tar.gz"
+      sha256 "788ea62089f39ce3a350c0b0cd7488ed89e53609d88dd54b1dfbc0e5fd6086e5"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/recur/releases/download/v0.1.1/recur-v0.1.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "b00f9bbe183f678e5d0a3efc686e5d5360232aca54e32a6deec61ed96e2c80d2"
+      url "https://github.com/rvben/recur/releases/download/v0.1.2/recur-v0.1.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "f98c36c0cc3ff66a3147dcb893420fc41b60ceb058183f3eeb05aa57772d93eb"
     else
-      url "https://github.com/rvben/recur/releases/download/v0.1.1/recur-v0.1.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "81a76abe680f741e5d2faa1214ceadccf512ab1b9cfb85fc4b242004cb57c2aa"
+      url "https://github.com/rvben/recur/releases/download/v0.1.2/recur-v0.1.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "f59a55215e200678f39ae7ec391ffe46a62f152c45f2c0dcf17276ccf788ac4a"
     end
   end
 
