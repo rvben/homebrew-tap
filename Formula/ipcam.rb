@@ -1,22 +1,22 @@
 class Ipcam < Formula
   desc "A CLI for managing IP cameras (Tapo, Reolink) via RTSP and vendor APIs"
   homepage "https://github.com/rvben/ipcam"
-  version "0.0.8"
+  version "0.0.9"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/rvben/ipcam/releases/download/v#{version}/ipcam-macos-aarch64"
-      sha256 "0d4e1a5ce96b19a700aafe08a47d804043cc22440b6418e661b1b9c13cbd28c6"
+      sha256 "16b54bbda8cdbac8821c865ed336638467a74d6bc9ebd1f07158b2d97d2d3fba"
     else
       url "https://github.com/rvben/ipcam/releases/download/v#{version}/ipcam-macos-x86_64"
-      sha256 "259f81ba25803faeec9aeda1b4e4deeb6fe3715f79d4a80491c8396f5cc06db1"
+      sha256 "6e18b84e75affa07b10668d601dd15297d49a1ce7bdc004c89621de4ce6b1696"
     end
   end
 
   on_linux do
     url "https://github.com/rvben/ipcam/releases/download/v#{version}/ipcam-linux-x86_64"
-    sha256 "1dfc86f988622dca7ad47d287b4d102068d1e774ec49d0553da4691512458792"
+    sha256 "08ba824d85eaa4a10ff95bb7c3bbc51bcf6c36910a050471739bbe956be89ced"
   end
 
   def install
