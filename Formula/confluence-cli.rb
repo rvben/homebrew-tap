@@ -5,18 +5,18 @@ class ConfluenceCli < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.16/confluence-cli-v0.1.16-aarch64-apple-darwin.tar.gz"
-      sha256 "129716daf340c16d6e5b4eca7ac5cdd600db02daf566e289eab3941a408799c0"
+      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.17/confluence-cli-v0.1.17-aarch64-apple-darwin.tar.gz"
+      sha256 "84944cb2f82b01d268d2ae01d13d7aa4ff63dbd0a09b552700d5315aecad4875"
     else
-      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.16/confluence-cli-v0.1.16-x86_64-apple-darwin.tar.gz"
-      sha256 "cae6d0c354d52ad2454e545e562321791b4590042019d578cc4b9e5bc93db9d1"
+      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.17/confluence-cli-v0.1.17-x86_64-apple-darwin.tar.gz"
+      sha256 "2e96dd324f762fcb7547bc3d623e79f353dfb87f9edc25b21ce1cd8064c302a5"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.16/confluence-cli-v0.1.16-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "c51e72a25d395526088089361f4faf90e660db1b874327df6c721cc8a6b75d62"
+      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.17/confluence-cli-v0.1.17-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "2d2d16b3a89c337fc36e70c73b61c0fc051bb3871482f22073337432afce65dd"
     else
       odie "Linux ARM is not supported by this formula."
     end
