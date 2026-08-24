@@ -1,26 +1,26 @@
 class Husker < Formula
   desc "MicroVM manager built on Firecracker (Linux) and Apple Virtualization.framework (macOS)"
   homepage "https://github.com/rvben/husker"
-  version "0.4.47"
+  version "0.4.48"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/husker/releases/download/v0.4.47/husker-v0.4.47-aarch64-apple-darwin.tar.gz"
-      sha256 "c98a31c9304d70455c6eef46cfebba5df83bc205cc7a4f24873cc5dc144152b8"
+      url "https://github.com/rvben/husker/releases/download/v0.4.48/husker-v0.4.48-aarch64-apple-darwin.tar.gz"
+      sha256 "5216578e5aeeca79e625b425ecece04b972e8e111040425c52ca5732ba35aa67"
     else
-      url "https://github.com/rvben/husker/releases/download/v0.4.47/husker-v0.4.47-x86_64-apple-darwin.tar.gz"
-      sha256 "27719405f57bac0e92ca413acfb3a66301f872c2233933d892f902e2b6179b41"
+      url "https://github.com/rvben/husker/releases/download/v0.4.48/husker-v0.4.48-x86_64-apple-darwin.tar.gz"
+      sha256 "29a2b56c2f9a37899cc726d7778df2cf8d710529571b1ee99110c9bb163decf3"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/husker/releases/download/v0.4.47/husker-v0.4.47-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "2909e7eecf3b01eba3716758fac831c5dac0f48ea234786fbffc13e1c94154e3"
+      url "https://github.com/rvben/husker/releases/download/v0.4.48/husker-v0.4.48-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "9dd00462014b83a304f86be850c1010105e672ab962c31a3543e60d5bc56074f"
     else
-      url "https://github.com/rvben/husker/releases/download/v0.4.47/husker-v0.4.47-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "ca739df0bbea7b0d796970c6cb55bd05f58ad34295598f6228514016685e7523"
+      url "https://github.com/rvben/husker/releases/download/v0.4.48/husker-v0.4.48-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "6c8d6949b4a268c8642568f93cbc4e975ee4775c77d631e440c784a9628d7703"
     end
   end
 
