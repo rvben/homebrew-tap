@@ -1,26 +1,26 @@
 class Ext4 < Formula
   desc "Read ext4 filesystems from image files and block devices"
   homepage "https://github.com/rvben/ext4-cli"
-  version "0.0.4"
+  version "0.0.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/ext4-cli/releases/download/v0.0.4/ext4-v0.0.4-aarch64-apple-darwin.tar.gz"
-      sha256 "8c4c7fa2be8d3da0613c3be69dfc5e783f41b8bc3f14f95a298680fe839606d9"
+      url "https://github.com/rvben/ext4-cli/releases/download/v0.0.5/ext4-v0.0.5-aarch64-apple-darwin.tar.gz"
+      sha256 "1669a0cc106a644541ce918619b7c9cfe450a58af10e7c833e59f6357711a45c"
     else
-      url "https://github.com/rvben/ext4-cli/releases/download/v0.0.4/ext4-v0.0.4-x86_64-apple-darwin.tar.gz"
-      sha256 "778416e65709b9cf79a58050525b4df055760bcb27ea2437a7b35c6c41e69829"
+      url "https://github.com/rvben/ext4-cli/releases/download/v0.0.5/ext4-v0.0.5-x86_64-apple-darwin.tar.gz"
+      sha256 "d968282f0a80d55cedbadd02e62b443df7b0646e677bffe8d3046df801e4cf3b"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/ext4-cli/releases/download/v0.0.4/ext4-v0.0.4-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "da7e751e19ef725415eafe91a7c79d258372fef9c281a7a155d583fe24318ada"
+      url "https://github.com/rvben/ext4-cli/releases/download/v0.0.5/ext4-v0.0.5-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "567ed20fc84a7ee09cb2848e432e10b9f58e6f0fd4dcbde108c7d82e275756ea"
     else
-      url "https://github.com/rvben/ext4-cli/releases/download/v0.0.4/ext4-v0.0.4-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "ad4c4cdd3ff9f70ca77dc0e8efde748122e98a12d93f79f2308e59fc17ea99d3"
+      url "https://github.com/rvben/ext4-cli/releases/download/v0.0.5/ext4-v0.0.5-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "16fa352d1c4428b1ee15fd0ca209ec09b9d5e0c8819237dfb26fe4409f2e2a8c"
     end
   end
 
