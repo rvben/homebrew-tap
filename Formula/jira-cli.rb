@@ -1,26 +1,26 @@
 class JiraCli < Formula
   desc "CLI for Jira"
   homepage "https://github.com/rvben/jira-cli"
-  version "0.4.7"
+  version "0.4.8"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/jira-cli/releases/download/v0.4.7/jira-cli-v0.4.7-aarch64-apple-darwin.tar.gz"
-      sha256 "8f910069e895c7dcd4bf0de20e7c7ff30f9e0438c00888cfda565fd734c15b0e"
+      url "https://github.com/rvben/jira-cli/releases/download/v0.4.8/jira-cli-v0.4.8-aarch64-apple-darwin.tar.gz"
+      sha256 "eced4b80bcdc8a06ca317f90fe4f0f887d4e81e11b68ad510dfbe4be1db82d77"
     else
-      url "https://github.com/rvben/jira-cli/releases/download/v0.4.7/jira-cli-v0.4.7-x86_64-apple-darwin.tar.gz"
-      sha256 "aed2f1b6ec99f741dc9080074c86069626481c5cad4cd806c589c25359b37c81"
+      url "https://github.com/rvben/jira-cli/releases/download/v0.4.8/jira-cli-v0.4.8-x86_64-apple-darwin.tar.gz"
+      sha256 "4fc378582d861f32039fec3839cad6e2c184680c955008f8fc56be99c93d08f5"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/jira-cli/releases/download/v0.4.7/jira-cli-v0.4.7-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "cc23cf584a9e40a7e2822c4903f98b1fce3fcc68da15e1f3e82efb3394b6ed52"
+      url "https://github.com/rvben/jira-cli/releases/download/v0.4.8/jira-cli-v0.4.8-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "513121fd4dd0cf0655631218b642af9422e2aa43e499b6d1ce69c6ff4bc21ba5"
     else
-      url "https://github.com/rvben/jira-cli/releases/download/v0.4.7/jira-cli-v0.4.7-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "957e83a6dc549f9c05ac9630ac3a7be06524284562339a67777267c848c633a2"
+      url "https://github.com/rvben/jira-cli/releases/download/v0.4.8/jira-cli-v0.4.8-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "3f27296193ed0ff6ca9590fad220eae86d2b9628445b637bcc4191674493f469"
     end
   end
 
