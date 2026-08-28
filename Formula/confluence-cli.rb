@@ -5,25 +5,25 @@ class ConfluenceCli < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.23/confluence-cli-v0.1.23-aarch64-apple-darwin.tar.gz"
-      sha256 "d7e03cd12cf386580f144b9b299a4f729cffa5cf7867659bbb4ab9d7a2a8fd12"
+      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.24/confluence-cli-v0.1.24-aarch64-apple-darwin.tar.gz"
+      sha256 "6b305d006e23ea9713c52ef89ce07b0154e694a470f52168b2b81eeaf635dc47"
     end
 
     on_intel do
-      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.23/confluence-cli-v0.1.23-x86_64-apple-darwin.tar.gz"
-      sha256 "5f741b400e91a8c385d287ae03442d989165780c48afb9b2b6f4acd32eeb4013"
+      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.24/confluence-cli-v0.1.24-x86_64-apple-darwin.tar.gz"
+      sha256 "a287b7e3d04403478ca318dadd5074db6247e426d972e2e67b3bf36efd556edc"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.23/confluence-cli-v0.1.23-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "c614c07e5a93c66746f084d4af270573613f9676c237aa7999ca75447c035836"
+      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.24/confluence-cli-v0.1.24-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1d15f4f8f346c8ac1dc15d1019391b6adfb89b5535e98b54ed7b1dc71bf192df"
     end
 
     on_intel do
-      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.23/confluence-cli-v0.1.23-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "1a3de26de6b61a92cc6721e07e9efc3139bdcf4c0dc0e8d097bc4957c8d0fe96"
+      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.24/confluence-cli-v0.1.24-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "ee33f8b09c04353df5571eb1324cc4f081d2263a7338e3673207610da778ef24"
     end
   end
 
