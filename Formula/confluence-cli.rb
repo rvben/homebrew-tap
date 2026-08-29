@@ -5,25 +5,25 @@ class ConfluenceCli < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.28/confluence-cli-v0.1.28-aarch64-apple-darwin.tar.gz"
-      sha256 "334f31d8d5efe3c254bea0723a0e2263ab2ffce55add51aa5a48971ffc16b315"
+      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.29/confluence-cli-v0.1.29-aarch64-apple-darwin.tar.gz"
+      sha256 "a305ef7d3ee731d94200f5427ed344443bc69c162943ad04ded0e13b30de692f"
     end
 
     on_intel do
-      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.28/confluence-cli-v0.1.28-x86_64-apple-darwin.tar.gz"
-      sha256 "253eb06bfee0fa544f3267b97253cff05232741347bf796c310f9930553430bf"
+      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.29/confluence-cli-v0.1.29-x86_64-apple-darwin.tar.gz"
+      sha256 "87d36ef02a4a2997ce050c7730cc001efec30fb18661dc4e327e8c64f853a49a"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.28/confluence-cli-v0.1.28-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "93fde17ef1b792c6ec5cb40af4734f4eeaac4e93488627ea3873c2f42211b841"
+      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.29/confluence-cli-v0.1.29-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "c91e3d6c47f4594dcb775c51395e3719fbd58bf78e9c035060e65d307981e1d0"
     end
 
     on_intel do
-      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.28/confluence-cli-v0.1.28-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "8c1772c56351a582e809a61d78e0d1c73baf83a0130446e2b3a81ce09c251ac8"
+      url "https://github.com/rvben/confluence-cli/releases/download/v0.1.29/confluence-cli-v0.1.29-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "1aeab21067efb311d0f12d1d6380c1fe247a330050192db8f3495463966e0382"
     end
   end
 
