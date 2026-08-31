@@ -1,30 +1,30 @@
 class Cacheferret < Formula
   desc "Find and safely clean developer caches across macOS and Linux"
   homepage "https://github.com/rvben/cacheferret"
-  version "0.5.0"
+  version "0.5.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/rvben/cacheferret/releases/download/v0.5.0/cacheferret-v0.5.0-aarch64-apple-darwin.tar.gz"
-      sha256 "df76ed39aae833917f77f9dafde4bc9037602a0b600849263cf711b9ccf31efb"
+      url "https://github.com/rvben/cacheferret/releases/download/v0.5.1/cacheferret-v0.5.1-aarch64-apple-darwin.tar.gz"
+      sha256 "90de37b86efa0a8318004d76f792c64bc7e0195b97ba4a52b132b044f0839ca2"
     end
 
     on_intel do
-      url "https://github.com/rvben/cacheferret/releases/download/v0.5.0/cacheferret-v0.5.0-x86_64-apple-darwin.tar.gz"
-      sha256 "ca4141c2eef1d54da8db70a98a16e6c0bb1bde9bde995e5b9da8042ad56779c7"
+      url "https://github.com/rvben/cacheferret/releases/download/v0.5.1/cacheferret-v0.5.1-x86_64-apple-darwin.tar.gz"
+      sha256 "7891fe5973928a8845dc3fa2be3c8c8bcdd94043ae90950d6163161e506a79bf"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/rvben/cacheferret/releases/download/v0.5.0/cacheferret-v0.5.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "371dda12c448eb0b7d3e2d697a3aa52f5ba6af729c1ed31a1144a8d7f878a911"
+      url "https://github.com/rvben/cacheferret/releases/download/v0.5.1/cacheferret-v0.5.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "48f1974f89882a136845d6f54d4fa5d3d7fd85db58043f5ed03ba272c69d68e3"
     end
 
     on_intel do
-      url "https://github.com/rvben/cacheferret/releases/download/v0.5.0/cacheferret-v0.5.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "77f3495eb1448bee2c44194fb9f69c1e89d6f5f79c53b750da66853768253891"
+      url "https://github.com/rvben/cacheferret/releases/download/v0.5.1/cacheferret-v0.5.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "04bed0735227de513ae3ed49d63d6a9efd30baf1431abfec648c1eb43e209d22"
     end
   end
 
