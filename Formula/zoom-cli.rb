@@ -1,26 +1,26 @@
 class ZoomCli < Formula
   desc "CLI for Zoom"
   homepage "https://github.com/rvben/zoom-cli"
-  version "0.2.7"
+  version "0.2.8"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/zoom-cli/releases/download/v0.2.7/zoom-cli-v0.2.7-aarch64-apple-darwin.tar.gz"
-      sha256 "e15b0e081284114e6e3e60c738820b385619c99f9738cd1bf1b8c931ce89ad5e"
+      url "https://github.com/rvben/zoom-cli/releases/download/v0.2.8/zoom-cli-v0.2.8-aarch64-apple-darwin.tar.gz"
+      sha256 "396c630c2744b6010f6c4571c8fb1c6d956603cfdc976d70f145ea35af8d72bd"
     else
-      url "https://github.com/rvben/zoom-cli/releases/download/v0.2.7/zoom-cli-v0.2.7-x86_64-apple-darwin.tar.gz"
-      sha256 "5e08d27bae2d9dac51263681cee9bf92c24acafe62810e7eba6dea9e0dcba1d7"
+      url "https://github.com/rvben/zoom-cli/releases/download/v0.2.8/zoom-cli-v0.2.8-x86_64-apple-darwin.tar.gz"
+      sha256 "cb5f415bbb99c5403e160b2fb0b13de621bf8c79ec5612d01a0b0b993f00977c"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/zoom-cli/releases/download/v0.2.7/zoom-cli-v0.2.7-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "896976978ebe855860e14bd5649640309b3c8d825c8b8f548af156455e7f08ae"
+      url "https://github.com/rvben/zoom-cli/releases/download/v0.2.8/zoom-cli-v0.2.8-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1b620251f5a5e8c1cb02b04967c44e68a341b4a288a4a80db88ab01fc4e98b30"
     else
-      url "https://github.com/rvben/zoom-cli/releases/download/v0.2.7/zoom-cli-v0.2.7-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "81028aacc20944764651ce0ac4642d621a4d7010a6ea6ead17e22f4e55a7fbbd"
+      url "https://github.com/rvben/zoom-cli/releases/download/v0.2.8/zoom-cli-v0.2.8-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "4f29a939f4a38c381a79691d126fcf8f3e16ccc971b64069a9207e116299551d"
     end
   end
 
