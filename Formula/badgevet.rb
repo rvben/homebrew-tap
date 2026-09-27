@@ -1,26 +1,26 @@
 class Badgevet < Formula
   desc "Find retired and broken status badges in Markdown that link checkers miss"
   homepage "https://github.com/rvben/badgevet"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/badgevet/releases/download/v0.1.1/badgevet-v0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "b0434c5c87ba89038c2f90aec3b5c3e67f1f3e85fb102826d135f1383eb4a478"
+      url "https://github.com/rvben/badgevet/releases/download/v0.1.2/badgevet-v0.1.2-aarch64-apple-darwin.tar.gz"
+      sha256 "d53c90936542af46d11bf2a54728f98265eaee70643b11c0e1084cc90f5c80d9"
     else
-      url "https://github.com/rvben/badgevet/releases/download/v0.1.1/badgevet-v0.1.1-x86_64-apple-darwin.tar.gz"
-      sha256 "b191fbb2a296e1ffe5bda905edbdbad0aaf86d44affc887a00af08398eeda369"
+      url "https://github.com/rvben/badgevet/releases/download/v0.1.2/badgevet-v0.1.2-x86_64-apple-darwin.tar.gz"
+      sha256 "b15975c53ef29692126cc7ddd49455353edd0d208a4ee82c756f02f536d17e99"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/badgevet/releases/download/v0.1.1/badgevet-v0.1.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "4c4f482dbef1eaa3af331871a6e25afa7cf95191c1fd4109ec9b9abfef90736f"
+      url "https://github.com/rvben/badgevet/releases/download/v0.1.2/badgevet-v0.1.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "71b42c4d9a2521c730bda4dc377df266103aca330ee30ae4c6bc0abb3e71403a"
     else
-      url "https://github.com/rvben/badgevet/releases/download/v0.1.1/badgevet-v0.1.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "65523f8d8f1c94599097f1e438778dc8a96c58fcf7e6fcad6bb74fb1f5c05280"
+      url "https://github.com/rvben/badgevet/releases/download/v0.1.2/badgevet-v0.1.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "3ff03da8452b1c402179f20094d13ed4deeb55342b1ad95c1e0595dc4e1f066a"
     end
   end
 
