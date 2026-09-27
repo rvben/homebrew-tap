@@ -1,26 +1,26 @@
 class Proxctl < Formula
   desc "CLI for Proxmox VE"
   homepage "https://github.com/rvben/proxctl"
-  version "0.2.10"
+  version "0.2.11"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/proxctl/releases/download/v0.2.10/proxctl-v0.2.10-aarch64-apple-darwin.tar.gz"
-      sha256 "65d685e6155b9dc96b8f98968631f00f378450c799afcde46a39f16c5417d0b9"
+      url "https://github.com/rvben/proxctl/releases/download/v0.2.11/proxctl-v0.2.11-aarch64-apple-darwin.tar.gz"
+      sha256 "4c0abc67199f40ef74f868beacf6f37685c43659bfec9f4f8a75f8348130e709"
     else
-      url "https://github.com/rvben/proxctl/releases/download/v0.2.10/proxctl-v0.2.10-x86_64-apple-darwin.tar.gz"
-      sha256 "306b86094bafe92a5b15262c3d3d280dd0a2175035d89e4c288b2ee6bf55fdf0"
+      url "https://github.com/rvben/proxctl/releases/download/v0.2.11/proxctl-v0.2.11-x86_64-apple-darwin.tar.gz"
+      sha256 "55e5c778fc7f8c7f3bc06c7070e60987ccc1885746b6023158a04c341ed5dac9"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/proxctl/releases/download/v0.2.10/proxctl-v0.2.10-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "91a9296891aedcffb768e1e3fa612a4e1f021d7bfe52d710526ffc6c485f04fe"
+      url "https://github.com/rvben/proxctl/releases/download/v0.2.11/proxctl-v0.2.11-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "de7b30394c3015897efbb1efd6fce1965b39f99017416fe2665463b9f168578d"
     else
-      url "https://github.com/rvben/proxctl/releases/download/v0.2.10/proxctl-v0.2.10-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "7ae3bbf78d14b7e5b4f66dac44b63e12288cbe37cca48f5cfe204feba7406226"
+      url "https://github.com/rvben/proxctl/releases/download/v0.2.11/proxctl-v0.2.11-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "37733b40f8e95ff7befc8ab725f287014ef79307713dcec012a17aabdce12c3c"
     end
   end
 
