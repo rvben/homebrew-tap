@@ -1,7 +1,7 @@
 class Tscribe < Formula
   desc "Transcribe any video/audio URL into agent-friendly markdown using whisper.cpp"
   homepage "https://github.com/rvben/tscribe"
-  version "0.2.3"
+  version "0.2.4"
   license "MIT"
 
   depends_on "ffmpeg"
@@ -9,21 +9,21 @@ class Tscribe < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/tscribe/releases/download/v0.2.3/tscribe-aarch64-apple-darwin.tar.gz"
-      sha256 "fc26d442b2f73f220b8680063c3f5edbbcdb3a2d60c7ca94a662db7ee7f61a59"
+      url "https://github.com/rvben/tscribe/releases/download/v0.2.4/tscribe-aarch64-apple-darwin.tar.gz"
+      sha256 "b8abc0ee6c183b8c2cec81878381f1dca9ed77c3c41343ed74247cc2a6072d6b"
     else
-      url "https://github.com/rvben/tscribe/releases/download/v0.2.3/tscribe-x86_64-apple-darwin.tar.gz"
-      sha256 "14bd092372feb358e6c39870924ed32fba19c399fbda0a5b7bb1c89f5f8ff641"
+      url "https://github.com/rvben/tscribe/releases/download/v0.2.4/tscribe-x86_64-apple-darwin.tar.gz"
+      sha256 "c0260e82ff581e09cc63b8fc09b9075ed79ba8ee74a2ebdd42530901ad67820b"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/tscribe/releases/download/v0.2.3/tscribe-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "2769d32bbbf4c79313aab47d36aff830885a7ff37a76aeea21a087a241de1303"
+      url "https://github.com/rvben/tscribe/releases/download/v0.2.4/tscribe-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "a69641f1694c59e91b2a1ac19ad7f88fdf62b56778f4c0cfa4a5e48191ba8ba6"
     else
-      url "https://github.com/rvben/tscribe/releases/download/v0.2.3/tscribe-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "d4bd3119e688fd0ff606a289454206a8ddbdda8ba29ef33e51ce48fe619abd0b"
+      url "https://github.com/rvben/tscribe/releases/download/v0.2.4/tscribe-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "9111cdeebe9b00075ae02d546922f9ffd9c32c5afc020473a86f17a5e54d6956"
     end
   end
 
