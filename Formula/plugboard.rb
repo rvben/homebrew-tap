@@ -1,26 +1,26 @@
 class Plugboard < Formula
   desc "Unofficial web dashboard and admin for Tasmota and Shelly smart devices"
   homepage "https://github.com/rvben/plugboard"
-  version "0.2.2"
+  version "0.2.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/plugboard/releases/download/v0.2.2/plugboard-v0.2.2-aarch64-apple-darwin.tar.gz"
-      sha256 "d7a4b42f62f222135f21a61f04aca17a0a56636806d932dfa9742fb0be8a6f9a"
+      url "https://github.com/rvben/plugboard/releases/download/v0.2.3/plugboard-v0.2.3-aarch64-apple-darwin.tar.gz"
+      sha256 "33ad502a84948e76eb45e7a9b4c11ce1125329cd98bdc5ed9325a8d139c4e2a0"
     else
-      url "https://github.com/rvben/plugboard/releases/download/v0.2.2/plugboard-v0.2.2-x86_64-apple-darwin.tar.gz"
-      sha256 "84698f0ba5cf04381e0bc46c95ac164361990c6c2f8e473ca6979f11dd48a41e"
+      url "https://github.com/rvben/plugboard/releases/download/v0.2.3/plugboard-v0.2.3-x86_64-apple-darwin.tar.gz"
+      sha256 "0abb831f9c5602b717d92b9c88d5632e05029ca6203de698aaed9c5fafe88dd2"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/plugboard/releases/download/v0.2.2/plugboard-v0.2.2-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "66a93c90ef0160f40388e93898dad5423a508a1f24825b88ef088d356dbd6010"
+      url "https://github.com/rvben/plugboard/releases/download/v0.2.3/plugboard-v0.2.3-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "bf4e8a20c3d7f84bd7ef1c1b885588e5821f11b11fa3999fd395ee14eac12ede"
     else
-      url "https://github.com/rvben/plugboard/releases/download/v0.2.2/plugboard-v0.2.2-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "697549075da8071dfd507052d388f76908f52f1518fdbdbe1c1a9b6a4c00fdfa"
+      url "https://github.com/rvben/plugboard/releases/download/v0.2.3/plugboard-v0.2.3-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "8ab21de3910e3791f79d82f258a7c890ecf16714a308b161e1122c6c7f6f494b"
     end
   end
 
