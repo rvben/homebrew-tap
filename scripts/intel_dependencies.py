@@ -86,7 +86,14 @@ def pin():
     pins = json.loads((ROOT / "packaging/intel-toolchain.json").read_text())
     if run("git", "-C", str(brew), "rev-parse", "HEAD") != pins["brew"]:
         checkout(brew, BREW_URL, pins["brew"])
-    checkout(brew / "Library/Taps/homebrew/homebrew-core", CORE_URL, pins["core"])
+    core = brew / "Library/Taps/homebrew/homebrew-core"
+    # Hosted images patch rustup and retain an old OpenSSL recipe. Preserve that
+    # image checkout; build against a fresh official checkout instead.
+    if core.exists() and run("git", "-C", str(core), "status", "--porcelain"):
+        backup = Path(tempfile.mkdtemp(prefix="runner-core-", dir=os.environ["RUNNER_TEMP"])) / "homebrew-core"
+        shutil.move(str(core), str(backup))
+        print("Preserved modified runner core checkout at", backup)
+    checkout(core, CORE_URL, pins["core"])
     if os.environ.get("INTEL_PLAN"):
         verify_context(load_plan())
 
