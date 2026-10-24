@@ -67,14 +67,21 @@ def checkout(path, url, revision):
         path.mkdir(parents=True, exist_ok=True)
         checked("git", "init", str(path))
         checked("git", "-C", str(path), "remote", "add", "origin", url)
-    if run("git", "-C", str(path), "status", "--porcelain"):
-        raise RuntimeError("refusing to replace modified Homebrew sources")
+    modified = run("git", "-C", str(path), "status", "--porcelain")
+    if modified:
+        raise RuntimeError("refusing to replace modified Homebrew sources at "
+                           + str(path) + ": " + modified[:2000])
     checked("git", "-C", str(path), "fetch", "--depth=1", url, revision)
     checked("git", "-C", str(path), "checkout", "--detach", revision)
 
 
 def pin():
     require_runner()
+    # setup-homebrew clears this variable when its core input is false.
+    os.environ["HOMEBREW_NO_INSTALL_FROM_API"] = "1"
+    if os.environ.get("GITHUB_ENV"):
+        with open(os.environ["GITHUB_ENV"], "a") as stream:
+            stream.write("HOMEBREW_NO_INSTALL_FROM_API=1\n")
     brew = Path(run("brew", "--repository"))
     pins = json.loads((ROOT / "packaging/intel-toolchain.json").read_text())
     if run("git", "-C", str(brew), "rev-parse", "HEAD") != pins["brew"]:
