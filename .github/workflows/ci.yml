@@ -31,7 +31,8 @@ jobs:
       matrix:
         os: [macos-latest, macos-15-intel, ubuntu-latest, ubuntu-24.04-arm]
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 90
+    # Intel has no new Homebrew bottles; allow real dependency builds to finish.
+    timeout-minutes: ${{ matrix.os == 'macos-15-intel' && 360 || 90 }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
