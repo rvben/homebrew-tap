@@ -1,0 +1,78 @@
+{
+  "outlook-cli": {
+    "kind": "native",
+    "binary": "outlook",
+    "assets": {
+      "mac_arm": "outlook-v{version}-aarch64-apple-darwin.tar.gz",
+      "mac_intel": "outlook-v{version}-x86_64-apple-darwin.tar.gz",
+      "linux_arm": "outlook-v{version}-aarch64-unknown-linux-gnu.tar.gz",
+      "linux_intel": "outlook-v{version}-x86_64-unknown-linux-gnu.tar.gz"
+    }
+  },
+  "servicenow-cli": {
+    "kind": "hybrid",
+    "binary": "servicenow",
+    "assets": {
+      "mac_arm": "servicenow-cli-v{version}-aarch64-apple-darwin.tar.gz",
+      "mac_intel": "servicenow-cli-v{version}-x86_64-apple-darwin.tar.gz"
+    }
+  },
+  "sharepoint-cli": {
+    "kind": "native",
+    "binary": "sharepoint",
+    "assets": {
+      "mac_arm": "sharepoint-v{version}-aarch64-apple-darwin.tar.gz",
+      "mac_intel": "sharepoint-v{version}-x86_64-apple-darwin.tar.gz",
+      "linux_arm": "sharepoint-v{version}-aarch64-unknown-linux-gnu.tar.gz",
+      "linux_intel": "sharepoint-v{version}-x86_64-unknown-linux-gnu.tar.gz"
+    }
+  },
+  "teams-cli": {
+    "kind": "hybrid",
+    "binary": "teams",
+    "assets": {
+      "mac_arm": "teams-cli-v{version}-aarch64-apple-darwin.tar.gz",
+      "mac_intel": "teams-cli-v{version}-x86_64-apple-darwin.tar.gz"
+    }
+  },
+  "upd": {
+    "kind": "native",
+    "binary": "upd",
+    "assets": {
+      "mac_arm": "upd-v{version}-aarch64-apple-darwin.tar.gz",
+      "mac_intel": "upd-v{version}-x86_64-apple-darwin.tar.gz",
+      "linux_arm": "upd-v{version}-aarch64-unknown-linux-gnu.tar.gz",
+      "linux_intel": "upd-v{version}-x86_64-unknown-linux-gnu.tar.gz"
+    }
+  },
+  "rumk": {
+    "kind": "native",
+    "binary": "rumk",
+    "assets": {
+      "mac_arm": "rumk-{version}-aarch64-apple-darwin.tar.gz",
+      "mac_intel": "rumk-{version}-x86_64-apple-darwin.tar.gz",
+      "linux_arm": "rumk-{version}-aarch64-unknown-linux-gnu.tar.gz",
+      "linux_intel": "rumk-{version}-x86_64-unknown-linux-gnu.tar.gz"
+    }
+  },
+  "ru": {
+    "kind": "source",
+    "binary": "ru",
+    "required": [
+      "go.mod",
+      "go.sum"
+    ]
+  },
+  "onenote-cli": {
+    "kind": "crate",
+    "binary": "onenote"
+  },
+  "uvlazy": {
+    "kind": "crate",
+    "binary": "uvlazy"
+  },
+  "shinylive-check": {
+    "kind": "pypi",
+    "binary": "shinylive-check"
+  }
+}

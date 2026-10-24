@@ -1,0 +1,36 @@
+class Rumk < Formula
+  desc "Lint and format Makefiles"
+  homepage "https://github.com/rvben/rumk"
+  version "@VERSION@"
+  license "MIT"
+
+  on_macos do
+    if Hardware::CPU.arm?
+      url "@MAC_ARM_URL@"
+      sha256 "@MAC_ARM_SHA256@"
+    else
+      url "@MAC_INTEL_URL@"
+      sha256 "@MAC_INTEL_SHA256@"
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.arm?
+      url "@LINUX_ARM_URL@"
+      sha256 "@LINUX_ARM_SHA256@"
+    else
+      url "@LINUX_INTEL_URL@"
+      sha256 "@LINUX_INTEL_SHA256@"
+    end
+  end
+
+  def install
+    bin.install "rumk"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/rumk --version")
+    (testpath/"Makefile").write ".PHONY: all\nall:\n\t@echo hello\n"
+    system bin/"rumk", "check", "Makefile"
+  end
+end

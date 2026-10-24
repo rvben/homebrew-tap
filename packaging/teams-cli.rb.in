@@ -1,0 +1,45 @@
+class TeamsCli < Formula
+  desc "Manage Microsoft Teams from the terminal"
+  homepage "https://github.com/rvben/teams-cli"
+  version "@VERSION@"
+  license "MIT"
+
+  on_macos do
+    if Hardware::CPU.arm?
+      url "@MAC_ARM_URL@"
+      sha256 "@MAC_ARM_SHA256@"
+    else
+      url "@MAC_INTEL_URL@"
+      sha256 "@MAC_INTEL_SHA256@"
+    end
+  end
+
+  on_linux do
+    depends_on "perl" => :build
+    depends_on "rust" => :build
+
+    on_arm do
+      url "@LINUX_SOURCE_URL@"
+      sha256 "@LINUX_SOURCE_SHA256@"
+    end
+    on_intel do
+      url "@LINUX_SOURCE_URL@"
+      sha256 "@LINUX_SOURCE_SHA256@"
+    end
+  end
+
+  def install
+    if OS.linux?
+      system "cargo", "install", *std_cargo_args, "--bin", "teams"
+    else
+      bin.install "teams"
+    end
+    bin.install_symlink "teams" => "teams-cli"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/teams --version")
+    assert_match version.to_s, shell_output("#{bin}/teams-cli --version")
+    assert_match "Usage:", shell_output("#{bin}/teams --help")
+  end
+end

@@ -1,0 +1,67 @@
+name: Update published releases
+
+on:
+  schedule:
+    - cron: '23 7 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: update-published-releases
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  update:
+    if: github.repository == 'rvben/homebrew-tap'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      actions: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.13'
+      - name: Check for an outstanding update
+        id: pending
+        run: |
+          count=0
+          refs=$(gh api "repos/$GITHUB_REPOSITORY/git/matching-refs/heads/automation/homebrew-" --jq '.[].ref')
+          while IFS= read -r ref; do
+            [ -n "$ref" ] || continue
+            branch="${ref#refs/heads/}"
+            ahead=$(gh api "repos/$GITHUB_REPOSITORY/compare/main...$branch" --jq '.ahead_by')
+            if [ "$ahead" -gt 0 ]; then
+              count=$((count + 1))
+              echo "Pending review: https://github.com/$GITHUB_REPOSITORY/compare/main...$branch" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done <<< "$refs"
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+      - name: Update formula pins
+        if: steps.pending.outputs.count == '0'
+        run: |
+          python3 scripts/update_formulas.py
+          python3 scripts/update_formulas.py --check
+          python3 -m unittest discover -s tests -v
+          git diff --check
+      - name: Prepare review branch and run native CI
+        if: steps.pending.outputs.count == '0'
+        run: |
+          if git diff --quiet -- Formula packaging/versions.json; then
+            echo "All managed formulas are current."
+            exit 0
+          fi
+          branch="automation/homebrew-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git switch -c "$branch"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add Formula packaging/versions.json
+          git commit -m 'chore(homebrew): update published releases'
+          git push origin "HEAD:refs/heads/$branch"
+          echo "Review and integrate after CI passes: https://github.com/$GITHUB_REPOSITORY/compare/main...$branch" >> "$GITHUB_STEP_SUMMARY"
+          gh workflow run ci.yml --ref "$branch"
