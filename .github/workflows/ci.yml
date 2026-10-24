@@ -10,7 +10,7 @@ permissions:
 
 concurrency:
   group: homebrew-ci-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   validate:
@@ -26,13 +26,13 @@ jobs:
       - run: python3 scripts/update_formulas.py --check
       - run: git diff --check 4b825dc642cb6eb9a060e54bf8d69288fbee4904 HEAD
   install:
+    needs: validate
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest, macos-15-intel, ubuntu-latest, ubuntu-24.04-arm]
+        os: [macos-latest, ubuntu-latest, ubuntu-24.04-arm]
     runs-on: ${{ matrix.os }}
-    # Intel has no new Homebrew bottles; allow real dependency builds to finish.
-    timeout-minutes: ${{ matrix.os == 'macos-15-intel' && 360 || 90 }}
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -47,7 +47,195 @@ jobs:
           PY
       - name: Install and test managed formulas
         run: python3 scripts/test_install.py
+  intel-plan:
+    needs: validate
+    permissions:
+      contents: read
+      actions: read
+    runs-on: macos-15-intel
+    timeout-minutes: 30
+    outputs:
+      plan: ${{ steps.plan.outputs.plan }}
+      resume_rank: ${{ steps.resume.outputs.resume_rank }}
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+      HOMEBREW_NO_INSTALL_FROM_API: '1'
+      HOMEBREW_NO_INSTALL_CLEANUP: '1'
+      HOMEBREW_NO_AUTOREMOVE: '1'
+      HOMEBREW_NO_ANALYTICS: '1'
+      HOMEBREW_NO_ENV_HINTS: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: Homebrew/actions/setup-homebrew@d482da0e602890d3160aade42e72c8556103bf04
+      - name: Check system Python compatibility before building dependencies
+        run: |
+          /usr/bin/python3 -m py_compile scripts/*.py
+          /usr/bin/python3 -m unittest discover -s tests -v
+      - name: Pin dependency recipes
+        run: /usr/bin/python3 scripts/intel_dependencies.py pin
+      - name: Plan cumulative build stages
+        id: plan
+        run: /usr/bin/python3 scripts/intel_dependencies.py plan
+      - name: Find the latest reusable stage
+        id: cache
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5
+        with:
+          path: ~/homebrew-intel-cache
+          key: ${{ steps.plan.outputs.runtime_key }}
+          restore-keys: |
+            ${{ steps.plan.outputs.rust_key }}
+            ${{ steps.plan.outputs.llvm_key }}
+            ${{ steps.plan.outputs.foundation_key }}
+          lookup-only: true
+      - name: Find a successful dependency build of this exact commit
+        id: bootstrap
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INTEL_PLAN: ${{ steps.plan.outputs.plan }}
+          MATCHED_CACHE_KEY: ${{ steps.cache.outputs.cache-matched-key }}
+        run: /usr/bin/python3 scripts/intel_dependencies.py bootstrap
+      - name: Download same-commit dependency handoff
+        if: steps.bootstrap.outputs.run_id != ''
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5
+        with:
+          name: ${{ steps.plan.outputs.runtime_key }}
+          path: ~/homebrew-intel-cache
+          github-token: ${{ github.token }}
+          run-id: ${{ steps.bootstrap.outputs.run_id }}
+      - name: Validate same-commit dependency handoff
+        if: steps.bootstrap.outputs.run_id != ''
+        env:
+          INTEL_PLAN: ${{ steps.plan.outputs.plan }}
+        run: /usr/bin/python3 scripts/intel_dependencies.py check runtime
+      - name: Seed this branch's dependency cache
+        if: steps.bootstrap.outputs.run_id != ''
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5
+        with:
+          path: ~/homebrew-intel-cache
+          key: ${{ steps.plan.outputs.runtime_key }}
+      - name: Select restart point
+        id: resume
+        env:
+          INTEL_PLAN: ${{ steps.plan.outputs.plan }}
+          MATCHED_CACHE_KEY: ${{ steps.bootstrap.outputs.cache_key }}
+        run: /usr/bin/python3 scripts/intel_dependencies.py resume
+  intel-foundation:
+    needs: intel-plan
+    if: needs.intel-plan.result == 'success' && fromJSON(needs.intel-plan.outputs.resume_rank || '0') < 1
+    uses: ./.github/workflows/intel-dependencies.yml
+    with:
+      stage: foundation
+      plan: ${{ needs.intel-plan.outputs.plan }}
+  intel-llvm:
+    needs: [intel-plan, intel-foundation]
+    if: >-
+      always() && !cancelled() && needs.intel-plan.result == 'success' &&
+      (needs.intel-foundation.result == 'success' ||
+       (needs.intel-foundation.result == 'skipped' &&
+        fromJSON(needs.intel-plan.outputs.resume_rank || '0') >= 1)) &&
+      fromJSON(needs.intel-plan.outputs.resume_rank || '0') < 2
+    uses: ./.github/workflows/intel-dependencies.yml
+    with:
+      stage: llvm
+      parent: foundation
+      parent_key: ${{ needs.intel-foundation.outputs.cache_key }}
+      parent_sha256: ${{ needs.intel-foundation.outputs.archive_sha256 }}
+      require_producer: ${{ fromJSON(needs.intel-plan.outputs.resume_rank) < 1 }}
+      plan: ${{ needs.intel-plan.outputs.plan }}
+  intel-rust:
+    needs: [intel-plan, intel-llvm]
+    if: >-
+      always() && !cancelled() && needs.intel-plan.result == 'success' &&
+      (needs.intel-llvm.result == 'success' ||
+       (needs.intel-llvm.result == 'skipped' &&
+        fromJSON(needs.intel-plan.outputs.resume_rank || '0') >= 2)) &&
+      fromJSON(needs.intel-plan.outputs.resume_rank || '0') < 3
+    uses: ./.github/workflows/intel-dependencies.yml
+    with:
+      stage: rust
+      parent: llvm
+      parent_key: ${{ needs.intel-llvm.outputs.cache_key }}
+      parent_sha256: ${{ needs.intel-llvm.outputs.archive_sha256 }}
+      require_producer: ${{ fromJSON(needs.intel-plan.outputs.resume_rank) < 2 }}
+      plan: ${{ needs.intel-plan.outputs.plan }}
+  intel-runtime:
+    needs: [intel-plan, intel-rust]
+    if: >-
+      always() && !cancelled() && needs.intel-plan.result == 'success' &&
+      (needs.intel-rust.result == 'success' ||
+       (needs.intel-rust.result == 'skipped' &&
+        fromJSON(needs.intel-plan.outputs.resume_rank || '0') >= 3)) &&
+      fromJSON(needs.intel-plan.outputs.resume_rank || '0') < 4
+    uses: ./.github/workflows/intel-dependencies.yml
+    with:
+      stage: runtime
+      parent: rust
+      parent_key: ${{ needs.intel-rust.outputs.cache_key }}
+      parent_sha256: ${{ needs.intel-rust.outputs.archive_sha256 }}
+      require_producer: ${{ fromJSON(needs.intel-plan.outputs.resume_rank) < 3 }}
+      plan: ${{ needs.intel-plan.outputs.plan }}
+  install-intel:
+    needs: [intel-plan, intel-runtime]
+    if: >-
+      always() && !cancelled() && needs.intel-plan.result == 'success' &&
+      (needs.intel-runtime.result == 'success' ||
+       (needs.intel-runtime.result == 'skipped' &&
+        fromJSON(needs.intel-plan.outputs.resume_rank || '0') >= 4))
+    runs-on: macos-15-intel
+    timeout-minutes: 90
+    env:
+      INTEL_PLAN: ${{ needs.intel-plan.outputs.plan }}
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+      HOMEBREW_NO_INSTALL_FROM_API: '1'
+      HOMEBREW_NO_INSTALL_CLEANUP: '1'
+      HOMEBREW_NO_AUTOREMOVE: '1'
+      HOMEBREW_NO_ANALYTICS: '1'
+      HOMEBREW_NO_ENV_HINTS: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: Homebrew/actions/setup-homebrew@d482da0e602890d3160aade42e72c8556103bf04
+      - name: Pin Homebrew and dependency recipes
+        run: /usr/bin/python3 scripts/intel_dependencies.py pin
+      - uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5
+        with:
+          path: ~/homebrew-intel-cache
+          key: ${{ needs.intel-runtime.outputs.cache_key || fromJSON(needs.intel-plan.outputs.plan).stages.runtime.key }}
+          restore-keys: ${{ needs.intel-runtime.outputs.cache_key == '' && fromJSON(needs.intel-plan.outputs.plan).stages.runtime.key || '' }}
+          fail-on-cache-miss: true
+      - name: Restore real Homebrew dependencies
+        env:
+          EXPECTED_ARCHIVE_SHA256: ${{ needs.intel-runtime.outputs.archive_sha256 }}
+          REQUIRE_PRODUCER: ${{ fromJSON(needs.intel-plan.outputs.resume_rank) < 4 }}
+        run: /usr/bin/python3 scripts/intel_dependencies.py restore runtime
+      - name: Check formula style
+        run: |
+          /usr/bin/python3 - <<'PYTHON'
+          import json, subprocess
+          names = json.load(open('packaging/projects.json'))
+          subprocess.run(['brew', 'style', *[f'Formula/{name}.rb' for name in names]], check=True)
+          PYTHON
+      - name: Install and test all managed formulas
+        run: /usr/bin/python3 scripts/test_install.py
+      - name: Verify producer bytes again after formula tests
+        if: github.event_name != 'pull_request' && github.ref_name != github.event.repository.default_branch && needs.intel-plan.outputs.resume_rank == '0'
+        env:
+          EXPECTED_ARCHIVE_SHA256: ${{ needs.intel-runtime.outputs.archive_sha256 }}
+          REQUIRE_PRODUCER: 'true'
+        run: /usr/bin/python3 scripts/intel_dependencies.py check runtime
+      - name: Hand off tested dependencies for integration of this exact commit
+        if: github.event_name != 'pull_request' && github.ref_name != github.event.repository.default_branch && needs.intel-plan.outputs.resume_rank == '0'
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+        with:
+          name: ${{ fromJSON(needs.intel-plan.outputs.plan).stages.runtime.key }}
+          path: ~/homebrew-intel-cache
+          retention-days: 1
+          if-no-files-found: error
   linux-floor:
+    needs: validate
     strategy:
       fail-fast: false
       matrix:
@@ -62,3 +250,23 @@ jobs:
           persist-credentials: false
       - name: Run native release binaries on Debian 12
         run: python3 scripts/check_linux_assets.py
+  checks:
+    name: All Homebrew checks
+    if: always()
+    needs: [validate, install, linux-floor, intel-plan, intel-foundation, intel-llvm, intel-rust, intel-runtime, install-intel]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require actual installation results on all four platforms
+        env:
+          JOB_RESULTS: ${{ toJSON(needs) }}
+        run: |
+          python3 - <<'PYTHON'
+          import json, os
+          jobs = json.loads(os.environ['JOB_RESULTS'])
+          required = ('validate', 'install', 'linux-floor', 'intel-plan', 'install-intel')
+          bad = [name for name in required if jobs[name]['result'] != 'success']
+          bad += [name for name, job in jobs.items() if job['result'] not in ('success', 'skipped') and name not in bad]
+          if bad:
+              raise SystemExit('Required Homebrew checks did not pass: ' + ', '.join(bad))
+          PYTHON

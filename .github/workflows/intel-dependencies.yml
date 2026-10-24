@@ -1,0 +1,83 @@
+name: Intel Homebrew dependencies
+
+on:
+  workflow_call:
+    inputs:
+      stage:
+        required: true
+        type: string
+      parent:
+        required: false
+        default: ''
+        type: string
+      plan:
+        required: true
+        type: string
+      parent_key:
+        required: false
+        default: ''
+        type: string
+      parent_sha256:
+        required: false
+        default: ''
+        type: string
+      require_producer:
+        required: false
+        default: false
+        type: boolean
+    outputs:
+      cache_key:
+        value: ${{ jobs.build.outputs.cache_key }}
+      archive_sha256:
+        value: ${{ jobs.build.outputs.archive_sha256 }}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15-intel
+    timeout-minutes: 360
+    outputs:
+      cache_key: ${{ steps.build.outputs.cache_key }}
+      archive_sha256: ${{ steps.build.outputs.archive_sha256 }}
+    env:
+      INTEL_PLAN: ${{ inputs.plan }}
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+      HOMEBREW_NO_INSTALL_FROM_API: '1'
+      HOMEBREW_NO_INSTALL_CLEANUP: '1'
+      HOMEBREW_NO_AUTOREMOVE: '1'
+      HOMEBREW_NO_ANALYTICS: '1'
+      HOMEBREW_NO_ENV_HINTS: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: Homebrew/actions/setup-homebrew@d482da0e602890d3160aade42e72c8556103bf04
+      - name: Pin Homebrew and dependency recipes
+        run: /usr/bin/python3 scripts/intel_dependencies.py pin
+      - name: Download preceding dependency stage
+        if: inputs.parent != ''
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5
+        with:
+          path: ~/homebrew-intel-cache
+          key: ${{ inputs.parent_key || fromJSON(inputs.plan).stages[inputs.parent].key }}
+          restore-keys: ${{ inputs.parent_key == '' && fromJSON(inputs.plan).stages[inputs.parent].key || '' }}
+          fail-on-cache-miss: true
+      - name: Restore preceding dependency stage
+        if: inputs.parent != ''
+        env:
+          PARENT_STAGE: ${{ inputs.parent }}
+          EXPECTED_ARCHIVE_SHA256: ${{ inputs.parent_sha256 }}
+          REQUIRE_PRODUCER: ${{ inputs.require_producer }}
+        run: /usr/bin/python3 scripts/intel_dependencies.py restore "$PARENT_STAGE"
+      - name: Build and archive dependencies
+        id: build
+        env:
+          DEPENDENCY_STAGE: ${{ inputs.stage }}
+        run: /usr/bin/python3 scripts/intel_dependencies.py build "$DEPENDENCY_STAGE"
+      - name: Save completed dependency stage
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5
+        with:
+          path: ~/homebrew-intel-cache
+          key: ${{ steps.build.outputs.cache_key }}

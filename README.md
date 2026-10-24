@@ -114,6 +114,25 @@ generated formulas and tests native installs on both architectures on macOS
 and Linux. Separate Debian 12 jobs check native Linux binaries on both
 architectures, including checksums and runtime library dependencies.
 
+Intel macOS builds Homebrew dependencies in separate foundation, LLVM, Rust,
+and runtime jobs because new Intel bottles are no longer available. Each
+completed stage is cached against its dependency recipes, Homebrew revision,
+macOS version, SDK, and compiler. Homebrew and core revisions are pinned in
+`packaging/intel-toolchain.json`; refresh these deliberately when updating the
+build toolchain. Retries resume from the latest matching stage; the final job
+still installs and tests every managed formula. A cold dependency build can take
+several hours. Cancelling it preserves only stages that have already completed.
+New pushes queue without cancelling a running build. Fork pull requests consume
+matching default-branch caches and fail clearly if a maintainer needs to warm one.
+A successful cold review run retains its runtime dependencies for one day, allowing
+integration of that identical commit to seed the default-branch cache without
+another cold build. The handoff accepts only successful runs of this workflow
+from this repository, with the exact same commit and dependency keys. It requires
+all stages to have been built in that run, with each restore checked against its
+producer job's checksum. Resumed branch caches are never promoted this way.
+If a runner compiler or SDK update invalidates the default-branch cache, run CI
+manually with `workflow_dispatch` on the default branch to rebuild it.
+
 The install test refuses to replace an existing managed installation. It uses a
 temporary tap and trust configuration, installs without linking, and removes only
 the test formulas. Homebrew dependencies are retained and autoremove is disabled.
