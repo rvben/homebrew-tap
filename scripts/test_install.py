@@ -50,10 +50,12 @@ def main():
                 except subprocess.CalledProcessError as error:
                     failures.append(f"{name}: {error}")
                 finally:
+                    # These formulas did not exist before this isolated test. Avoid
+                    # scanning unrelated installed tools when removing our test kegs.
                     # No autoremove: dependencies may predate this test or be used elsewhere.
                     if name in installed():
                         try:
-                            brew("uninstall", "--force", full_name)
+                            brew("uninstall", "--force", "--ignore-dependencies", full_name)
                         except subprocess.CalledProcessError as error:
                             failures.append(f"{name} cleanup: {error}")
         finally:
