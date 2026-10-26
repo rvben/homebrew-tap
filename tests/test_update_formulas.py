@@ -65,12 +65,37 @@ class UpdateTests(unittest.TestCase):
                 updater.update("example", {}, {"version": "1.2.3"})
 
     def test_unchanged_release_needs_no_download(self):
-        previous = {"version": "1.2.3", "sources": {}}
+        previous = {"version": "1.2.3", "revision": 1, "sources": {}}
         release = {"tag_name": "v1.2.3", "draft": False, "prerelease": False}
         with patch.object(updater.subprocess, "check_output", return_value=json.dumps(release)):
             with patch.object(updater, "download") as download:
                 self.assertEqual(updater.update("example", {}, previous), previous)
                 download.assert_not_called()
+
+    def test_new_release_resets_packaging_revision(self):
+        release = {"tag_name": "v1.2.4", "draft": False, "prerelease": False}
+        previous = {"version": "1.2.3", "revision": 1, "sources": {}}
+        template = '  version "@VERSION@"@REVISION@\n'
+        self.assertEqual(updater.render(template, previous), '  version "1.2.3"\n  revision 1\n')
+        with patch.object(updater.subprocess, "check_output", return_value=json.dumps(release)):
+            with patch.object(updater, "download", return_value=archive("example-1.2.4/Cargo.toml", "example-1.2.4/Cargo.lock")):
+                updated = updater.update("example", {"kind": "crate"}, previous)
+        self.assertNotIn("revision", updated)
+        self.assertEqual(updater.render(template, updated), '  version "1.2.4"\n')
+
+    def test_formula_revision_cannot_inject_ruby(self):
+        for revision in (-1, True, '1\n  system "false"'):
+            with self.subTest(revision=revision), self.assertRaises(ValueError):
+                updater.render('@REVISION@', {"version": "1.2.3", "revision": revision, "sources": {}})
+
+    def test_refresh_preserves_packaging_revision(self):
+        release = {"tag_name": "v1.2.3", "draft": False, "prerelease": False}
+        previous = {"version": "1.2.3", "revision": 1, "sources": {}}
+        with patch.object(updater.subprocess, "check_output", return_value=json.dumps(release)):
+            with patch.object(updater, "download", return_value=archive("example-1.2.3/Cargo.toml", "example-1.2.3/Cargo.lock")):
+                refreshed = updater.update("example", {"kind": "crate"}, previous, refresh=True)
+        self.assertEqual(refreshed["revision"], 1)
+        self.assertIn("source", refreshed["sources"])
 
 
 if __name__ == "__main__":

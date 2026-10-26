@@ -3,6 +3,7 @@ class Vership < Formula
   homepage "https://github.com/rvben/vership"
   version "0.5.30"
   license "MIT"
+  revision 1
 
   on_macos do
     if Hardware::CPU.arm?
@@ -15,20 +16,29 @@ class Vership < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm?
-      url "https://github.com/rvben/vership/releases/download/v0.5.30/vership-v0.5.30-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "9ca58d7bcb21b17c560e2f32981bb382af54cb8df14f710e86288d1237073c6f"
-    else
-      url "https://github.com/rvben/vership/releases/download/v0.5.30/vership-v0.5.30-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "d960a00c0873039e25ada7cfdede2ea2e8d6c83d73880f7bff4323c60747cba6"
+    depends_on "rust" => :build
+
+    on_arm do
+      url "https://static.crates.io/crates/vership/vership-0.5.30.crate"
+      sha256 "6419e40e9e2fc7263861ed7256f0d07e10034c289601248c527b8964ccb59f48"
+    end
+    on_intel do
+      url "https://static.crates.io/crates/vership/vership-0.5.30.crate"
+      sha256 "6419e40e9e2fc7263861ed7256f0d07e10034c289601248c527b8964ccb59f48"
     end
   end
 
   def install
-    bin.install "vership"
+    if OS.linux?
+      system "cargo", "install", *std_cargo_args, "--bin", "vership"
+    else
+      bin.install "vership"
+    end
   end
 
   test do
-    system "#{bin}/vership", "--version"
+    assert_match version.to_s, shell_output("#{bin}/vership --version")
+    assert_match "Usage:", shell_output("#{bin}/vership --help")
+    assert_equal "vership", JSON.parse(shell_output("#{bin}/vership schema")).fetch("name")
   end
 end

@@ -72,8 +72,8 @@ Homebrew may ask you to trust a third-party formula before installing it.
 `rumdl` is available from Homebrew core: `brew install rumdl`.
 `tasmota` remains a legacy formula name; new installations should use `tasmota-cli`.
 
-All ten new formulas support Apple Silicon and Intel Macs, and ARM64 and
-x86-64 Linux. ServiceNow and Teams use native macOS binaries and source builds
+The managed formulas support Apple Silicon and Intel Macs, and ARM64 and
+x86-64 Linux. ServiceNow, Teams, and Vership use native macOS binaries and source builds
 on Linux, avoiding the published binaries' glibc 2.39 requirement.
 OneNote, ru, and uvlazy build from source, with Homebrew supplying the build tools.
 The ru source recipe guards a dependency patch that avoids a startup failure.
@@ -84,9 +84,9 @@ Chromium for your account before running browser checks.
 
 ## Maintenance
 
-Upstream projects publish releases with `vership`. Existing projects keep their
-upstream tap update jobs. The ten projects listed in `packaging/projects.json` are
-managed here, without additional upstream deploy keys:
+Upstream projects publish releases with `vership`. The projects listed in
+`packaging/projects.json` are managed here, without upstream tap deploy keys.
+Other formulas may still use upstream tap update jobs.
 
 ```sh
 python3 scripts/update_formulas.py           # pin published releases
@@ -107,6 +107,13 @@ A daily workflow prepares a review branch and writes its comparison link in the
 Actions summary. It explicitly dispatches native CI for that branch. A maintainer
 integrates it after the checks pass, then deletes the review branch (especially
 when squashing). While an unmerged review branch exists, later runs wait.
+For a newly published Vership release, run **Update published releases** manually
+to start this process immediately, or let the daily schedule pick it up.
+
+Vership's template accepts a `revision` in its version pin for a packaging-only
+rebuild. Refreshing the same version preserves it; a new upstream version resets
+it automatically. Vership 0.5.30 uses revision 1 so existing Linux installations
+receive the switch to a source build.
 
 The workflow never pushes to the default branch, changes protection settings, or
 requires permission for Actions to create or approve pull requests. CI checks the

@@ -45,6 +45,10 @@ def render(template, release):
     values = {"VERSION": release["version"]}
     if not re.fullmatch(r"\d+\.\d+\.\d+", values["VERSION"]):
         raise ValueError("expected a stable semantic version")
+    revision = release.get("revision", 0)
+    if type(revision) is not int or revision < 0:
+        raise ValueError("expected a nonnegative integer formula revision")
+    values["REVISION"] = f"\n  revision {revision}" if revision else ""
     for key, source in release["sources"].items():
         if not re.fullmatch(r"[a-f0-9]{64}", source["sha256"]):
             raise ValueError(f"invalid checksum: {key}")
@@ -94,7 +98,12 @@ def update(name, project, previous, refresh=False):
         sources["source"] = pin(sdist["url"], "sha256:" + sdist["digests"]["sha256"])
     else:
         raise ValueError(f"unsupported package kind: {project['kind']}")
-    return {"version": version, "sources": sources}
+    pinned = {"version": version, "sources": sources}
+    # Re-pinning a recipe must not downgrade its packaging revision. A new
+    # upstream version starts at revision zero unless a maintainer changes it.
+    if previous and previous["version"] == version and "revision" in previous:
+        pinned["revision"] = previous["revision"]
+    return pinned
 
 
 def main():
