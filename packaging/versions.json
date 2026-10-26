@@ -145,11 +145,11 @@
     }
   },
   "shinylive-check": {
-    "version": "0.2.0",
+    "version": "0.2.1",
     "sources": {
       "source": {
-        "url": "https://files.pythonhosted.org/packages/00/e3/c2fb65ec7ee08ccc98b6b9d1de8565d4864d639898aa774bbb1cd115d4ad/shinylive_check-0.2.0.tar.gz",
-        "sha256": "96d9cec17140c73ea49874bf4ff2b75f0fb72c7efe24165f9aa434ee03890ecf"
+        "url": "https://files.pythonhosted.org/packages/77/b6/514966b09a429cfab777c2b40559d0c13b6f0b6927861175ab170fc16fdf/shinylive_check-0.2.1.tar.gz",
+        "sha256": "1ec4f000288eef40e80323f292eae2adc69c006edcecac8f282da067fc2d48e7"
       }
     }
   }
