@@ -3,8 +3,8 @@ class ShinyliveCheck < Formula
 
   desc "Smoke-check exported Shinylive sites in headless Chromium"
   homepage "https://github.com/rvben/shinylive-check"
-  url "https://files.pythonhosted.org/packages/b2/21/a585d12bd835d39be0a920bcfa6c2f22a2f73961624ba5950690cb2d0322/shinylive_check-0.1.0.tar.gz"
-  sha256 "b8630b9e92fbab6dba0a62ad4060820b09bfc08b1ef53a73a2655f26db99ce61"
+  url "https://files.pythonhosted.org/packages/00/e3/c2fb65ec7ee08ccc98b6b9d1de8565d4864d639898aa774bbb1cd115d4ad/shinylive_check-0.2.0.tar.gz"
+  sha256 "96d9cec17140c73ea49874bf4ff2b75f0fb72c7efe24165f9aa434ee03890ecf"
   license "MIT"
 
   depends_on "python@3.14"
