@@ -76,23 +76,23 @@
     }
   },
   "upd": {
-    "version": "0.18.0",
+    "version": "0.18.1",
     "sources": {
       "mac_arm": {
-        "url": "https://github.com/rvben/upd/releases/download/v0.18.0/upd-v0.18.0-aarch64-apple-darwin.tar.gz",
-        "sha256": "35180b2fe08323618c1e8a63f5cfe3cb19c05a38cabd7c550ee8bd82fc5009c4"
+        "url": "https://github.com/rvben/upd/releases/download/v0.18.1/upd-v0.18.1-aarch64-apple-darwin.tar.gz",
+        "sha256": "90883ec38b4f7d2b7209b6b2a304860641b7f8b79bfaba3e8040c5d57b225882"
       },
       "mac_intel": {
-        "url": "https://github.com/rvben/upd/releases/download/v0.18.0/upd-v0.18.0-x86_64-apple-darwin.tar.gz",
-        "sha256": "606f78bc25d54f9c0831f6dc80129d3648440bfbdfd07d49c3e9ccd9f551521b"
+        "url": "https://github.com/rvben/upd/releases/download/v0.18.1/upd-v0.18.1-x86_64-apple-darwin.tar.gz",
+        "sha256": "104948ea4b8739a3a48491b4d3ad1aa307c1337595de801eaa6eb2e5f4e9eeec"
       },
       "linux_arm": {
-        "url": "https://github.com/rvben/upd/releases/download/v0.18.0/upd-v0.18.0-aarch64-unknown-linux-gnu.tar.gz",
-        "sha256": "d0ff84701f7b7e56e11ef8344ff641faf245c8fd29a1fc6e4476e5b52950edf7"
+        "url": "https://github.com/rvben/upd/releases/download/v0.18.1/upd-v0.18.1-aarch64-unknown-linux-gnu.tar.gz",
+        "sha256": "7b14691a68d694b7ff102d2e63c3ca01155f0ef9e79c00501800fbd1397abae6"
       },
       "linux_intel": {
-        "url": "https://github.com/rvben/upd/releases/download/v0.18.0/upd-v0.18.0-x86_64-unknown-linux-gnu.tar.gz",
-        "sha256": "4a2d09c5590a024b6da139bb92ee39b9509fb04ff2cdc0193b7c7cdd1a8baed6"
+        "url": "https://github.com/rvben/upd/releases/download/v0.18.1/upd-v0.18.1-x86_64-unknown-linux-gnu.tar.gz",
+        "sha256": "4f8e5ce7e987cc3425d32a990195e8b0cdd65b8bfccff498647c504a0b8be892"
       }
     }
   },
