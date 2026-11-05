@@ -1,26 +1,26 @@
 class Upd < Formula
   desc "Update dependencies across package ecosystems"
   homepage "https://github.com/rvben/upd"
-  version "0.18.1"
+  version "0.18.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/upd/releases/download/v0.18.1/upd-v0.18.1-aarch64-apple-darwin.tar.gz"
-      sha256 "90883ec38b4f7d2b7209b6b2a304860641b7f8b79bfaba3e8040c5d57b225882"
+      url "https://github.com/rvben/upd/releases/download/v0.18.3/upd-v0.18.3-aarch64-apple-darwin.tar.gz"
+      sha256 "612084d147366e34a79f25cbd44d1200faca4cc781a179a170c35827fa370173"
     else
-      url "https://github.com/rvben/upd/releases/download/v0.18.1/upd-v0.18.1-x86_64-apple-darwin.tar.gz"
-      sha256 "104948ea4b8739a3a48491b4d3ad1aa307c1337595de801eaa6eb2e5f4e9eeec"
+      url "https://github.com/rvben/upd/releases/download/v0.18.3/upd-v0.18.3-x86_64-apple-darwin.tar.gz"
+      sha256 "a068fc58df36d623ef93436b050c34fc63b31c7349bbc5d2c7970f1f7614533d"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/upd/releases/download/v0.18.1/upd-v0.18.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "7b14691a68d694b7ff102d2e63c3ca01155f0ef9e79c00501800fbd1397abae6"
+      url "https://github.com/rvben/upd/releases/download/v0.18.3/upd-v0.18.3-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "b8ba88a7ca4e60056f00b08009cefe9b1ed7146ce3f9f3347a42b267b2a253c9"
     else
-      url "https://github.com/rvben/upd/releases/download/v0.18.1/upd-v0.18.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "4f8e5ce7e987cc3425d32a990195e8b0cdd65b8bfccff498647c504a0b8be892"
+      url "https://github.com/rvben/upd/releases/download/v0.18.3/upd-v0.18.3-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "e37b79dc4be07b9d82c8932e6d408a1786d1cb90ce6445d23fa50f8941954e1c"
     end
   end
 

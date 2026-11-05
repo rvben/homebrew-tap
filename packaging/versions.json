@@ -1,22 +1,22 @@
 {
   "outlook-cli": {
-    "version": "0.2.5",
+    "version": "0.2.6",
     "sources": {
       "mac_arm": {
-        "url": "https://github.com/rvben/outlook-cli/releases/download/v0.2.5/outlook-v0.2.5-aarch64-apple-darwin.tar.gz",
-        "sha256": "6e5bde8a167ac6683a1e080f141b537ad9aaba4dcccd4f46bd2076cf906fee6f"
+        "url": "https://github.com/rvben/outlook-cli/releases/download/v0.2.6/outlook-v0.2.6-aarch64-apple-darwin.tar.gz",
+        "sha256": "b2877b160fd245e6a175f2565f37f0a62f115f76943b25d4dfd442836b21f883"
       },
       "mac_intel": {
-        "url": "https://github.com/rvben/outlook-cli/releases/download/v0.2.5/outlook-v0.2.5-x86_64-apple-darwin.tar.gz",
-        "sha256": "830ee5eed1a3202ac6aa26cf4cc3dbc9b603c8146ddd64fec038233e78ca7829"
+        "url": "https://github.com/rvben/outlook-cli/releases/download/v0.2.6/outlook-v0.2.6-x86_64-apple-darwin.tar.gz",
+        "sha256": "cdef1da7b74826f287001d83310366e8135bbc9b4e64278cc5541989a4dc132f"
       },
       "linux_arm": {
-        "url": "https://github.com/rvben/outlook-cli/releases/download/v0.2.5/outlook-v0.2.5-aarch64-unknown-linux-gnu.tar.gz",
-        "sha256": "719bd03e3c04748eccba59486be2f4de15914e12a0d318d21a2aa86a872678d7"
+        "url": "https://github.com/rvben/outlook-cli/releases/download/v0.2.6/outlook-v0.2.6-aarch64-unknown-linux-gnu.tar.gz",
+        "sha256": "80bc030cfda4814edd85eff0a22b732c107b68d6b3a9a28f0404b258ec44f946"
       },
       "linux_intel": {
-        "url": "https://github.com/rvben/outlook-cli/releases/download/v0.2.5/outlook-v0.2.5-x86_64-unknown-linux-gnu.tar.gz",
-        "sha256": "671798a0dea7d9b024b59533c5eca5ee6c879c78f273c828d5e66e70056e27b7"
+        "url": "https://github.com/rvben/outlook-cli/releases/download/v0.2.6/outlook-v0.2.6-x86_64-unknown-linux-gnu.tar.gz",
+        "sha256": "630efbe336113532a6ffd649097cfcf1c92f9c5f1eb8bff1f9741e0312680bfd"
       }
     }
   },
@@ -38,23 +38,23 @@
     }
   },
   "sharepoint-cli": {
-    "version": "0.0.12",
+    "version": "0.1.0",
     "sources": {
       "mac_arm": {
-        "url": "https://github.com/rvben/sharepoint-cli/releases/download/v0.0.12/sharepoint-v0.0.12-aarch64-apple-darwin.tar.gz",
-        "sha256": "e6bbe1152dcf86784cf0925dd726fc20677fdd9eb63790c8d2654a3720ef74dc"
+        "url": "https://github.com/rvben/sharepoint-cli/releases/download/v0.1.0/sharepoint-v0.1.0-aarch64-apple-darwin.tar.gz",
+        "sha256": "7a37d8be99e7b6fb159151abbbcf50660f6ee7f2db7cc9432459ec09d4d8d8f1"
       },
       "mac_intel": {
-        "url": "https://github.com/rvben/sharepoint-cli/releases/download/v0.0.12/sharepoint-v0.0.12-x86_64-apple-darwin.tar.gz",
-        "sha256": "0ab5f7d0865ea7b0470cfcec02d0d2cedc3126fe48de7958fd28709fd2cdf8eb"
+        "url": "https://github.com/rvben/sharepoint-cli/releases/download/v0.1.0/sharepoint-v0.1.0-x86_64-apple-darwin.tar.gz",
+        "sha256": "199e757535cf4104349c73047574b5220fa2fb245ae5740dd5fc6df59ddd878b"
       },
       "linux_arm": {
-        "url": "https://github.com/rvben/sharepoint-cli/releases/download/v0.0.12/sharepoint-v0.0.12-aarch64-unknown-linux-gnu.tar.gz",
-        "sha256": "d936e0d98dfee788ac462ef78701cbba88d1be56e57503eaa5960a6f419edc09"
+        "url": "https://github.com/rvben/sharepoint-cli/releases/download/v0.1.0/sharepoint-v0.1.0-aarch64-unknown-linux-gnu.tar.gz",
+        "sha256": "7abf583aeb13332ccd27d60b627b714f336149600c6d30bfa41e484236efce71"
       },
       "linux_intel": {
-        "url": "https://github.com/rvben/sharepoint-cli/releases/download/v0.0.12/sharepoint-v0.0.12-x86_64-unknown-linux-gnu.tar.gz",
-        "sha256": "892c423e394280958a86a6aed4ca223f3eec8d4158621c5e5179804782a858a9"
+        "url": "https://github.com/rvben/sharepoint-cli/releases/download/v0.1.0/sharepoint-v0.1.0-x86_64-unknown-linux-gnu.tar.gz",
+        "sha256": "6b6bd3ed1b98075d33b8eedf513b73b58cdab3a82483757dce212a5716792272"
       }
     }
   },
@@ -76,23 +76,23 @@
     }
   },
   "upd": {
-    "version": "0.18.1",
+    "version": "0.18.3",
     "sources": {
       "mac_arm": {
-        "url": "https://github.com/rvben/upd/releases/download/v0.18.1/upd-v0.18.1-aarch64-apple-darwin.tar.gz",
-        "sha256": "90883ec38b4f7d2b7209b6b2a304860641b7f8b79bfaba3e8040c5d57b225882"
+        "url": "https://github.com/rvben/upd/releases/download/v0.18.3/upd-v0.18.3-aarch64-apple-darwin.tar.gz",
+        "sha256": "612084d147366e34a79f25cbd44d1200faca4cc781a179a170c35827fa370173"
       },
       "mac_intel": {
-        "url": "https://github.com/rvben/upd/releases/download/v0.18.1/upd-v0.18.1-x86_64-apple-darwin.tar.gz",
-        "sha256": "104948ea4b8739a3a48491b4d3ad1aa307c1337595de801eaa6eb2e5f4e9eeec"
+        "url": "https://github.com/rvben/upd/releases/download/v0.18.3/upd-v0.18.3-x86_64-apple-darwin.tar.gz",
+        "sha256": "a068fc58df36d623ef93436b050c34fc63b31c7349bbc5d2c7970f1f7614533d"
       },
       "linux_arm": {
-        "url": "https://github.com/rvben/upd/releases/download/v0.18.1/upd-v0.18.1-aarch64-unknown-linux-gnu.tar.gz",
-        "sha256": "7b14691a68d694b7ff102d2e63c3ca01155f0ef9e79c00501800fbd1397abae6"
+        "url": "https://github.com/rvben/upd/releases/download/v0.18.3/upd-v0.18.3-aarch64-unknown-linux-gnu.tar.gz",
+        "sha256": "b8ba88a7ca4e60056f00b08009cefe9b1ed7146ce3f9f3347a42b267b2a253c9"
       },
       "linux_intel": {
-        "url": "https://github.com/rvben/upd/releases/download/v0.18.1/upd-v0.18.1-x86_64-unknown-linux-gnu.tar.gz",
-        "sha256": "4f8e5ce7e987cc3425d32a990195e8b0cdd65b8bfccff498647c504a0b8be892"
+        "url": "https://github.com/rvben/upd/releases/download/v0.18.3/upd-v0.18.3-x86_64-unknown-linux-gnu.tar.gz",
+        "sha256": "e37b79dc4be07b9d82c8932e6d408a1786d1cb90ce6445d23fa50f8941954e1c"
       }
     }
   },
