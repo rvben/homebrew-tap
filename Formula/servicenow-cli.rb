@@ -1,16 +1,16 @@
 class ServicenowCli < Formula
   desc "Manage ServiceNow records and workflows"
   homepage "https://github.com/rvben/servicenow-cli"
-  version "0.6.0"
+  version "0.6.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/servicenow-cli/releases/download/v0.6.0/servicenow-cli-v0.6.0-aarch64-apple-darwin.tar.gz"
-      sha256 "29010693d17ed963aa17e1c72d7b61b043a868e88517531c62b6846376349dd2"
+      url "https://github.com/rvben/servicenow-cli/releases/download/v0.6.1/servicenow-cli-v0.6.1-aarch64-apple-darwin.tar.gz"
+      sha256 "b64de7e075e51877e69ebbb4e3de9ab914a1a3bd3da693c17f6ee505914134f8"
     else
-      url "https://github.com/rvben/servicenow-cli/releases/download/v0.6.0/servicenow-cli-v0.6.0-x86_64-apple-darwin.tar.gz"
-      sha256 "5a0a6907dd1bc435ccf10ac0cb159fa900d7dc6c455e4cb4e7a7e96999bd9d0a"
+      url "https://github.com/rvben/servicenow-cli/releases/download/v0.6.1/servicenow-cli-v0.6.1-x86_64-apple-darwin.tar.gz"
+      sha256 "2e1fbc126acf0ba17d50eace7e485ed6ce704639ff505634410168646dc0d7b5"
     end
   end
 
@@ -18,12 +18,12 @@ class ServicenowCli < Formula
     depends_on "rust" => :build
 
     on_arm do
-      url "https://static.crates.io/crates/servicenow-cli/servicenow-cli-0.6.0.crate"
-      sha256 "de386169be4ebd1fa6bec1b37752c75766d15564fbc4d6098c866e7f6f767780"
+      url "https://static.crates.io/crates/servicenow-cli/servicenow-cli-0.6.1.crate"
+      sha256 "a20542347b86e2380fba281769a8e3413a45fbdbc40aa2f4d73a38f96703c2fd"
     end
     on_intel do
-      url "https://static.crates.io/crates/servicenow-cli/servicenow-cli-0.6.0.crate"
-      sha256 "de386169be4ebd1fa6bec1b37752c75766d15564fbc4d6098c866e7f6f767780"
+      url "https://static.crates.io/crates/servicenow-cli/servicenow-cli-0.6.1.crate"
+      sha256 "a20542347b86e2380fba281769a8e3413a45fbdbc40aa2f4d73a38f96703c2fd"
     end
   end
 
