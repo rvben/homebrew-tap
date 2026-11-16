@@ -1,26 +1,26 @@
 class YoobiCli < Formula
-  desc "Read, plan and verify Yoobi timesheet updates from the command line"
+  desc "Read and browse Yoobi timesheets from the command line"
   homepage "https://github.com/rvben/yoobi-cli"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/yoobi-cli/releases/download/v0.1.2/yoobi-cli-v0.1.2-aarch64-apple-darwin.tar.gz"
-      sha256 "5be0bbe80ca5071269488aaa087cb271139ed539dd1f4f74f6807a8a372fe566"
+      url "https://github.com/rvben/yoobi-cli/releases/download/v0.1.3/yoobi-cli-v0.1.3-aarch64-apple-darwin.tar.gz"
+      sha256 "cbdcd4ff4e92fb3f8fa5ba53eedcb34fafaff4011bad37bb34b8687105c4120c"
     else
-      url "https://github.com/rvben/yoobi-cli/releases/download/v0.1.2/yoobi-cli-v0.1.2-x86_64-apple-darwin.tar.gz"
-      sha256 "bb0f9899bcb4dfdca01685acf9e19bc80056b2ae7040ec69a0fc3e3715174feb"
+      url "https://github.com/rvben/yoobi-cli/releases/download/v0.1.3/yoobi-cli-v0.1.3-x86_64-apple-darwin.tar.gz"
+      sha256 "2150192607921da436f6ec17888be27da4e80e5e5159f111fb30705f7e0bb526"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/yoobi-cli/releases/download/v0.1.2/yoobi-cli-v0.1.2-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "9eeefc0263ef84d7583fbfbed0aac689dd4834f49853d8c8d3b8b998ab886f9b"
+      url "https://github.com/rvben/yoobi-cli/releases/download/v0.1.3/yoobi-cli-v0.1.3-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "5a03c132e2863a49ecd656477d0f1a2b0b21e2933cbf45590436c117ba01dc51"
     else
-      url "https://github.com/rvben/yoobi-cli/releases/download/v0.1.2/yoobi-cli-v0.1.2-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "9d56736f35384dbea0ea462c1d47728749a37a9e8f6903c060eddd6687367fca"
+      url "https://github.com/rvben/yoobi-cli/releases/download/v0.1.3/yoobi-cli-v0.1.3-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "9e55baf3ee25c188709d5e65e47fb311b89550987a01b2352761e7472b82e05d"
     end
   end
 
