@@ -42,6 +42,14 @@ jobs:
             fi
           done <<< "$refs"
           echo "count=$count" >> "$GITHUB_OUTPUT"
+      # No formula is updated while a review branch is outstanding, so this run
+      # must not report success: a forgotten branch would otherwise hold every
+      # managed formula at its current version without any visible signal.
+      - name: Fail while an earlier update awaits review
+        if: steps.pending.outputs.count != '0'
+        run: |
+          echo "::error::Formula updates are blocked: ${{ steps.pending.outputs.count }} automation/homebrew-* branch(es) await review. Integrate or delete them (links in the run summary), then run this workflow again."
+          exit 1
       - name: Update formula pins
         if: steps.pending.outputs.count == '0'
         run: |
