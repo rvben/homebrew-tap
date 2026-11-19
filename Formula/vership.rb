@@ -1,17 +1,16 @@
 class Vership < Formula
   desc "Multi-target release orchestrator"
   homepage "https://github.com/rvben/vership"
-  version "0.5.30"
+  version "0.5.32"
   license "MIT"
-  revision 1
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/vership/releases/download/v0.5.30/vership-v0.5.30-aarch64-apple-darwin.tar.gz"
-      sha256 "930c394115c3fbbc49b9b769003ff38ec71ac2e3cbd4faa1c5b02d947e9aad3d"
+      url "https://github.com/rvben/vership/releases/download/v0.5.32/vership-v0.5.32-aarch64-apple-darwin.tar.gz"
+      sha256 "0837fb285a2a39c624828fffbce7c99cb74b7bb9ca3ae04f11d150e63234bef4"
     else
-      url "https://github.com/rvben/vership/releases/download/v0.5.30/vership-v0.5.30-x86_64-apple-darwin.tar.gz"
-      sha256 "8f896fd6b0872e63f78b82f4af9cf3d2aaddb2e357b0d6b4aeeb4ca217210cf9"
+      url "https://github.com/rvben/vership/releases/download/v0.5.32/vership-v0.5.32-x86_64-apple-darwin.tar.gz"
+      sha256 "2d5b5c88d4e3e4489be980e71bd6e5c75db57628d4375d1d79e9fa5e13c05f07"
     end
   end
 
@@ -19,12 +18,12 @@ class Vership < Formula
     depends_on "rust" => :build
 
     on_arm do
-      url "https://static.crates.io/crates/vership/vership-0.5.30.crate"
-      sha256 "6419e40e9e2fc7263861ed7256f0d07e10034c289601248c527b8964ccb59f48"
+      url "https://static.crates.io/crates/vership/vership-0.5.32.crate"
+      sha256 "5bad9364b8d8053df738985359d8648ab910bf5b9a328cdedaa54343244a84af"
     end
     on_intel do
-      url "https://static.crates.io/crates/vership/vership-0.5.30.crate"
-      sha256 "6419e40e9e2fc7263861ed7256f0d07e10034c289601248c527b8964ccb59f48"
+      url "https://static.crates.io/crates/vership/vership-0.5.32.crate"
+      sha256 "5bad9364b8d8053df738985359d8648ab910bf5b9a328cdedaa54343244a84af"
     end
   end
 

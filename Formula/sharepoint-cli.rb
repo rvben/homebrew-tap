@@ -1,26 +1,26 @@
 class SharepointCli < Formula
   desc "Manage SharePoint sites, libraries, and files"
   homepage "https://github.com/rvben/sharepoint-cli"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/sharepoint-cli/releases/download/v0.1.0/sharepoint-v0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "7a37d8be99e7b6fb159151abbbcf50660f6ee7f2db7cc9432459ec09d4d8d8f1"
+      url "https://github.com/rvben/sharepoint-cli/releases/download/v0.1.1/sharepoint-v0.1.1-aarch64-apple-darwin.tar.gz"
+      sha256 "40b04b2c5bc183dcfa89177e8e3f06c7ffaaf9be624c9b13dd8906bbed21fb8d"
     else
-      url "https://github.com/rvben/sharepoint-cli/releases/download/v0.1.0/sharepoint-v0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "199e757535cf4104349c73047574b5220fa2fb245ae5740dd5fc6df59ddd878b"
+      url "https://github.com/rvben/sharepoint-cli/releases/download/v0.1.1/sharepoint-v0.1.1-x86_64-apple-darwin.tar.gz"
+      sha256 "cae653d2af9f19c9758a88a01403153b5c222152a03494e1f8507bf4b57831ed"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rvben/sharepoint-cli/releases/download/v0.1.0/sharepoint-v0.1.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "7abf583aeb13332ccd27d60b627b714f336149600c6d30bfa41e484236efce71"
+      url "https://github.com/rvben/sharepoint-cli/releases/download/v0.1.1/sharepoint-v0.1.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "d43af95fecb0ceb618a0bc962a1df4ff354401f0052425f4d223f87fc795d14d"
     else
-      url "https://github.com/rvben/sharepoint-cli/releases/download/v0.1.0/sharepoint-v0.1.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "6b6bd3ed1b98075d33b8eedf513b73b58cdab3a82483757dce212a5716792272"
+      url "https://github.com/rvben/sharepoint-cli/releases/download/v0.1.1/sharepoint-v0.1.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "6d348ed38d7661cb82943703aa9acbe452200639967eb8b4d2066eba4ef77182"
     end
   end
 
